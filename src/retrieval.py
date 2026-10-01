@@ -128,7 +128,7 @@ class DocumentRetriever:
         ]
 
     def load_document(self, file_path: str) -> str:
-        """Load a plain-text or .txt file and register it as a new document.
+        """Load a .txt, .md, .csv, or .pdf file and register it as a new document.
 
         The document ID is derived from the filename (without extension).
         Returns the generated document ID on success, or an error message.
@@ -138,16 +138,23 @@ class DocumentRetriever:
             return f"Error: File not found — {file_path}"
 
         suffix = path.suffix.lower()
-        if suffix not in ("", ".txt", ".md", ".csv"):
+        supported = ("", ".txt", ".md", ".csv", ".pdf")
+        if suffix not in supported:
             return (
                 f"Error: Unsupported file type '{suffix}'. "
-                "Supported types: .txt, .md, .csv (plain text files)."
+                "Supported types: .pdf, .txt, .md, .csv"
             )
 
         try:
-            content = path.read_text(encoding="utf-8")
+            if suffix == ".pdf":
+                content = self._extract_pdf_text(path)
+            else:
+                content = path.read_text(encoding="utf-8")
         except Exception as exc:
             return f"Error reading file: {exc}"
+
+        if not content.strip():
+            return "Error: The file appears to be empty or contains no extractable text."
 
         # Build a clean document ID from the filename
         raw_id = re.sub(r"[^a-zA-Z0-9_]", "_", path.stem).strip("_").lower()
@@ -160,9 +167,28 @@ class DocumentRetriever:
         self.documents[doc_id] = {
             "content": content,
             "title": path.name,
-            "type": "uploaded",
+            "type": "pdf" if suffix == ".pdf" else "uploaded",
         }
         return doc_id
+
+    @staticmethod
+    def _extract_pdf_text(path: Path) -> str:
+        """Extract plain text from a PDF using pypdf."""
+        try:
+            from pypdf import PdfReader
+        except ImportError:
+            raise ImportError(
+                "pypdf is required for PDF support. Run: pip install pypdf"
+            )
+
+        reader = PdfReader(str(path))
+        pages_text = []
+        for i, page in enumerate(reader.pages, start=1):
+            text = page.extract_text() or ""
+            if text.strip():
+                pages_text.append(f"[Page {i}]\n{text.strip()}")
+
+        return "\n\n".join(pages_text)
 
 
 # Module-level retriever instance shared by tools

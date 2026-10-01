@@ -214,7 +214,9 @@ st.markdown("---")
 def _render_doc_list():
     docs = retriever.list_documents()
     for d in docs:
-        if d["type"] == "uploaded":
+        if d["type"] == "pdf":
+            badge = '<span class="doc-badge-uploaded">📑 PDF</span>'
+        elif d["type"] == "uploaded":
             badge = '<span class="doc-badge-uploaded">🆕 Uploaded</span>'
         else:
             badge = f'<span class="doc-badge-builtin">📄 {d["type"].title()}</span>'
@@ -242,11 +244,11 @@ tab_upload, tab_sum, tab_calc = st.tabs([
 # ────────────────────────────────────────────────────────────────────────
 with tab_upload:
     st.subheader("Upload Your Documents")
-    st.caption("Supported formats: **.txt · .md · .csv** — files become available in all tabs instantly.")
+    st.caption("Supported formats: **.pdf · .txt · .md · .csv** — files become available in all tabs instantly.")
 
     uploaded_files = st.file_uploader(
         "Drop files here or click Browse",
-        type=["txt", "md", "csv"],
+        type=["pdf", "txt", "md", "csv"],
         accept_multiple_files=True,
         label_visibility="collapsed",
     )

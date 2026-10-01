@@ -1,0 +1,501 @@
+Patient_ID,Admission_Date,Discharge_Date,Department,Primary_Diagnosis,Age,Gender,Length_of_Stay_Days,Total_Cost_USD,Insurance_Type,Insurance_Covered_USD,Patient_Paid_USD,Outcome,Readmitted_30Days,Satisfaction_Score,Attending_Physician
+PAT-0001,2024-12-09,2024-12-23,Orthopedics,Fracture,55,Female,14,35208.21,Medicare,26406.16,8802.05,Discharged,No,98,Dr. Patel
+PAT-0002,2024-08-14,2024-08-14,Outpatient,Vaccination,80,Female,0,14536.1,Private,11628.88,2907.22,Discharged,No,74,Dr. Williams
+PAT-0003,2024-01-28,2024-02-05,Orthopedics,Spinal Stenosis,80,Female,8,88097.94,Medicaid,79288.15,8809.79,Transferred,Yes,67,Dr. Mehta
+PAT-0004,2024-04-17,2024-05-05,Pediatrics,Fever NOS,28,Male,18,19998.09,Government,16998.38,2999.71,Still Admitted,No,95,Dr. Mehta
+PAT-0005,2024-10-25,2024-11-11,Maternity,Preeclampsia,6,Male,17,24863.99,Private,19891.19,4972.8,Transferred,No,99,Dr. Mehta
+PAT-0006,2024-07-17,2024-07-26,Orthopedics,Spinal Stenosis,85,Female,9,81066.21,Medicaid,72959.59,8106.62,Discharged,No,61,Dr. Nguyen
+PAT-0007,2024-12-29,2025-01-02,ICU,Respiratory Failure,41,Female,4,46455.17,Government,39486.89,6968.28,Deceased,No,71,Dr. Mehta
+PAT-0008,2024-05-06,2024-05-23,Cardiology,Coronary Artery Disease,40,Female,17,32222.26,Self-Pay,0.0,32222.26,Discharged,No,61,Dr. Kim
+PAT-0009,2024-09-13,2024-09-22,Neurology,Migraine,8,Male,9,59749.64,Self-Pay,0.0,59749.64,Discharged,No,61,Dr. Patel
+PAT-0010,2024-12-02,2024-12-07,Maternity,C-Section,12,Female,5,69555.61,Government,59122.27,10433.34,Discharged,No,99,Dr. Hassan
+PAT-0011,2024-08-06,2024-08-16,Oncology,Lung Cancer,78,Male,10,31818.62,Government,27045.83,4772.79,Discharged,No,68,Dr. Torres
+PAT-0012,2024-08-08,2024-08-13,Oncology,Breast Cancer,84,Male,5,88691.42,Medicare,66518.57,22172.85,Discharged,No,95,Dr. Okonkwo
+PAT-0013,2024-06-12,2024-06-26,Cardiology,Heart Failure,53,Male,14,29375.39,Medicaid,26437.85,2937.54,Discharged,No,72,Dr. Mehta
+PAT-0014,2024-11-11,2024-11-11,Outpatient,Vaccination,35,Male,0,57847.94,Government,49170.75,8677.19,Discharged,No,74,Dr. Williams
+PAT-0015,2024-03-09,2024-03-26,General Surgery,Bowel Resection,78,Female,17,44957.52,Medicaid,40461.77,4495.75,Discharged,No,84,Dr. Okonkwo
+PAT-0016,2024-04-25,2024-04-27,Neurology,Epilepsy,53,Male,2,72819.56,Private,58255.65,14563.91,Discharged,No,86,Dr. Williams
+PAT-0017,2024-08-12,2024-09-01,Oncology,Lymphoma,63,Male,20,65596.67,Self-Pay,0.0,65596.67,Deceased,No,87,Dr. Nguyen
+PAT-0018,2024-07-20,2024-08-09,Pediatrics,Pneumonia,74,Female,20,56736.51,Government,48226.03,8510.48,Transferred,No,62,Dr. Mehta
+PAT-0019,2024-09-22,2024-10-10,Neurology,Stroke,51,Male,18,93476.85,Private,74781.48,18695.37,Discharged,No,93,Dr. Rosenberg
+PAT-0020,2024-06-04,2024-06-14,Maternity,C-Section,60,Female,10,16483.04,Medicaid,14834.74,1648.3,Still Admitted,No,63,Dr. Rosenberg
+PAT-0021,2024-09-13,2024-09-17,Orthopedics,Spinal Stenosis,24,Female,4,74156.47,Government,63033.0,11123.47,Discharged,No,86,Dr. Okonkwo
+PAT-0022,2024-10-29,2024-11-05,General Surgery,Appendectomy,59,Male,7,9294.92,Medicaid,8365.43,929.49,Discharged,No,70,Dr. Rosenberg
+PAT-0023,2024-02-13,2024-03-01,Pediatrics,Fever NOS,50,Female,17,69271.52,Government,58880.79,10390.73,Discharged,No,70,Dr. Okonkwo
+PAT-0024,2024-10-16,2024-10-21,Pediatrics,Fever NOS,21,Female,5,82642.71,Medicare,61982.03,20660.68,Discharged,No,63,Dr. Rosenberg
+PAT-0025,2024-11-16,2024-11-22,Emergency,Trauma,16,Female,6,85442.65,Medicare,64081.99,21360.66,Transferred,Yes,76,Dr. Rosenberg
+PAT-0026,2024-01-03,2024-01-23,ICU,Multi-Organ Failure,64,Female,20,23208.14,Government,19726.92,3481.22,Discharged,No,89,Dr. Hassan
+PAT-0027,2024-01-04,2024-01-04,Outpatient,Vaccination,32,Male,0,83900.21,Medicaid,75510.19,8390.02,Discharged,No,95,Dr. Okonkwo
+PAT-0028,2024-11-30,2024-12-12,Cardiology,Coronary Artery Disease,5,Female,12,14494.27,Private,11595.42,2898.85,Discharged,No,98,Dr. Mehta
+PAT-0029,2024-08-01,2024-08-07,Orthopedics,Knee Replacement,21,Female,6,64110.92,Government,54494.28,9616.64,Still Admitted,No,98,Dr. Hassan
+PAT-0030,2024-01-19,2024-01-22,Pediatrics,Pneumonia,39,Female,3,31209.82,Self-Pay,0.0,31209.82,Transferred,No,87,Dr. Okonkwo
+PAT-0031,2024-12-21,2024-12-30,Orthopedics,Fracture,43,Male,9,50448.37,Government,42881.11,7567.26,Deceased,No,73,Dr. Torres
+PAT-0032,2024-09-04,2024-09-24,Orthopedics,Spinal Stenosis,37,Male,20,41028.45,Medicaid,36925.6,4102.85,Deceased,No,96,Dr. Hassan
+PAT-0033,2024-09-23,2024-10-14,General Surgery,Hernia Repair,64,Male,21,47193.92,Medicare,35395.44,11798.48,Discharged,No,74,Dr. Williams
+PAT-0034,2024-08-26,2024-09-16,Cardiology,Hypertension,16,Male,21,70269.52,Medicare,52702.14,17567.38,Discharged,No,86,Dr. Patel
+PAT-0035,2024-11-22,2024-11-29,ICU,Post-Op Monitoring,2,Female,7,61146.24,Medicaid,55031.62,6114.62,Deceased,No,64,Dr. Torres
+PAT-0036,2024-01-04,2024-01-08,Pediatrics,Pneumonia,88,Male,4,32195.25,Self-Pay,0.0,32195.25,Discharged,No,99,Dr. Patel
+PAT-0037,2024-12-10,2024-12-26,Pediatrics,Fever NOS,61,Female,16,75901.36,Medicare,56926.02,18975.34,Transferred,No,100,Dr. Nguyen
+PAT-0038,2024-09-23,2024-10-03,Cardiology,Arrhythmia,73,Female,10,69091.62,Medicaid,62182.46,6909.16,Discharged,No,61,Dr. Williams
+PAT-0039,2024-05-23,2024-05-24,Oncology,Lymphoma,44,Male,1,93456.89,Government,79438.36,14018.53,Deceased,No,96,Dr. Williams
+PAT-0040,2024-12-27,2025-01-07,Emergency,Acute Abdomen,5,Female,11,26375.06,Private,21100.05,5275.01,Discharged,No,75,Dr. Santos
+PAT-0041,2024-06-03,2024-06-09,ICU,Multi-Organ Failure,15,Male,6,36051.12,Private,28840.9,7210.22,Transferred,No,65,Dr. Torres
+PAT-0042,2024-04-07,2024-04-18,Oncology,Lung Cancer,62,Male,11,69795.95,Government,59326.56,10469.39,Deceased,No,80,Dr. Okonkwo
+PAT-0043,2024-01-19,2024-02-03,Neurology,Stroke,50,Male,15,68028.41,Government,57824.15,10204.26,Discharged,No,79,Dr. Rosenberg
+PAT-0044,2024-02-22,2024-03-10,Cardiology,Arrhythmia,85,Female,17,71031.26,Private,56825.01,14206.25,Discharged,No,79,Dr. Santos
+PAT-0045,2024-05-21,2024-06-08,Emergency,Acute Abdomen,41,Male,18,73596.54,Private,58877.23,14719.31,Discharged,No,70,Dr. Hassan
+PAT-0046,2024-09-20,2024-09-24,ICU,Post-Op Monitoring,27,Male,4,51906.2,Government,44120.27,7785.93,Discharged,No,69,Dr. Williams
+PAT-0047,2024-11-09,2024-11-20,Emergency,Trauma,70,Female,11,42591.61,Medicare,31943.71,10647.9,Discharged,Yes,63,Dr. Williams
+PAT-0048,2024-07-19,2024-07-25,Maternity,Preeclampsia,77,Male,6,84758.19,Self-Pay,0.0,84758.19,Still Admitted,No,79,Dr. Torres
+PAT-0049,2024-08-26,2024-09-14,Orthopedics,Arthritis,17,Female,19,9552.7,Self-Pay,0.0,9552.7,Discharged,No,79,Dr. Santos
+PAT-0050,2024-11-11,2024-11-20,Oncology,Lymphoma,47,Female,9,37733.65,Medicaid,33960.29,3773.36,Discharged,No,80,Dr. Williams
+PAT-0051,2024-02-27,2024-03-10,General Surgery,Cholecystectomy,62,Male,12,44248.97,Medicare,33186.73,11062.24,Transferred,No,82,Dr. Williams
+PAT-0052,2024-10-11,2024-11-01,Pediatrics,Fever NOS,10,Male,21,75446.99,Government,64129.94,11317.05,Deceased,No,97,Dr. Santos
+PAT-0053,2024-03-22,2024-04-07,ICU,Multi-Organ Failure,50,Female,16,7022.85,Medicare,5267.14,1755.71,Deceased,No,97,Dr. Patel
+PAT-0054,2024-12-21,2024-12-29,ICU,Multi-Organ Failure,23,Male,8,63218.07,Private,50574.46,12643.61,Deceased,No,96,Dr. Hassan
+PAT-0055,2024-06-15,2024-07-03,General Surgery,Appendectomy,13,Male,18,78234.57,Medicare,58675.93,19558.64,Still Admitted,No,85,Dr. Hassan
+PAT-0056,2024-06-16,2024-07-02,Maternity,Normal Delivery,83,Male,16,62987.52,Private,50390.02,12597.5,Still Admitted,No,68,Dr. Okonkwo
+PAT-0057,2024-09-29,2024-10-09,General Surgery,Hernia Repair,50,Female,10,58786.9,Self-Pay,0.0,58786.9,Transferred,No,80,Dr. Patel
+PAT-0058,2024-10-25,2024-10-26,Orthopedics,Fracture,79,Female,1,93720.92,Self-Pay,0.0,93720.92,Deceased,No,78,Dr. Mehta
+PAT-0059,2024-12-26,2025-01-13,Cardiology,Hypertension,46,Female,18,11133.58,Medicaid,10020.22,1113.36,Still Admitted,No,75,Dr. Patel
+PAT-0060,2024-07-26,2024-08-08,Maternity,Gestational Diabetes,56,Female,13,52150.19,Medicare,39112.64,13037.55,Transferred,No,72,Dr. Okonkwo
+PAT-0061,2024-12-09,2024-12-14,Emergency,Respiratory Distress,18,Male,5,1892.98,Private,1514.38,378.6,Discharged,No,91,Dr. Okonkwo
+PAT-0062,2024-08-21,2024-09-10,Maternity,Gestational Diabetes,55,Female,20,59510.01,Self-Pay,0.0,59510.01,Discharged,No,95,Dr. Santos
+PAT-0063,2024-08-05,2024-08-25,Oncology,Lymphoma,1,Female,20,55241.81,Medicare,41431.36,13810.45,Discharged,No,77,Dr. Mehta
+PAT-0064,2024-09-04,2024-09-04,Outpatient,Vaccination,48,Female,0,11460.08,Self-Pay,0.0,11460.08,Transferred,No,65,Dr. Torres
+PAT-0065,2024-09-24,2024-10-14,Orthopedics,Spinal Stenosis,12,Male,20,23900.79,Private,19120.63,4780.16,Discharged,No,94,Dr. Torres
+PAT-0066,2024-08-28,2024-09-12,Cardiology,Coronary Artery Disease,66,Female,15,86150.39,Government,73227.83,12922.56,Discharged,No,86,Dr. Okonkwo
+PAT-0067,2024-12-21,2025-01-10,Cardiology,Hypertension,39,Male,20,69280.74,Government,58888.63,10392.11,Deceased,No,100,Dr. Mehta
+PAT-0068,2024-11-15,2024-11-16,Emergency,Acute Abdomen,37,Male,1,46464.41,Medicare,34848.31,11616.1,Deceased,No,77,Dr. Kim
+PAT-0069,2024-05-11,2024-05-12,Emergency,Acute Abdomen,15,Male,1,57679.99,Government,49027.99,8652.0,Discharged,No,88,Dr. Santos
+PAT-0070,2024-04-02,2024-04-19,General Surgery,Cholecystectomy,5,Female,17,33096.28,Private,26477.02,6619.26,Transferred,No,98,Dr. Nguyen
+PAT-0071,2024-12-04,2024-12-19,Neurology,Stroke,82,Female,15,16558.08,Government,14074.37,2483.71,Discharged,No,82,Dr. Mehta
+PAT-0072,2024-08-25,2024-09-07,Oncology,Lymphoma,61,Female,13,29188.78,Government,24810.46,4378.32,Discharged,No,84,Dr. Torres
+PAT-0073,2024-01-07,2024-01-17,Maternity,Normal Delivery,58,Female,10,36784.79,Medicaid,33106.31,3678.48,Transferred,No,62,Dr. Hassan
+PAT-0074,2024-06-20,2024-06-29,Emergency,Respiratory Distress,35,Male,9,76378.2,Medicaid,68740.38,7637.82,Still Admitted,No,85,Dr. Hassan
+PAT-0075,2024-09-23,2024-10-04,Neurology,Stroke,87,Male,11,65824.22,Medicare,49368.17,16456.05,Discharged,No,60,Dr. Nguyen
+PAT-0076,2024-09-25,2024-09-29,Orthopedics,Knee Replacement,88,Male,4,42807.76,Medicare,32105.82,10701.94,Discharged,No,76,Dr. Hassan
+PAT-0077,2024-01-30,2024-02-19,Orthopedics,Fracture,85,Male,20,85011.69,Medicare,63758.77,21252.92,Discharged,No,100,Dr. Hassan
+PAT-0078,2024-07-11,2024-08-01,Oncology,Colorectal Cancer,73,Female,21,76461.45,Medicare,57346.09,19115.36,Transferred,No,71,Dr. Williams
+PAT-0079,2024-05-21,2024-06-04,General Surgery,Hernia Repair,89,Male,14,85899.48,Medicaid,77309.53,8589.95,Transferred,No,64,Dr. Nguyen
+PAT-0080,2024-01-31,2024-02-09,Pediatrics,Fever NOS,34,Male,9,17560.96,Private,14048.77,3512.19,Still Admitted,No,72,Dr. Rosenberg
+PAT-0081,2024-03-14,2024-04-01,Orthopedics,Fracture,56,Male,18,21372.01,Private,17097.61,4274.4,Discharged,No,76,Dr. Williams
+PAT-0082,2024-05-08,2024-05-08,Outpatient,Routine Checkup,58,Male,0,2567.64,Self-Pay,0.0,2567.64,Still Admitted,No,100,Dr. Nguyen
+PAT-0083,2024-03-18,2024-03-29,Emergency,Respiratory Distress,51,Female,11,54931.11,Government,46691.44,8239.67,Transferred,No,91,Dr. Williams
+PAT-0084,2024-04-25,2024-04-26,ICU,Post-Op Monitoring,50,Female,1,90681.43,Self-Pay,0.0,90681.43,Still Admitted,No,94,Dr. Kim
+PAT-0085,2024-01-29,2024-02-19,Maternity,Normal Delivery,83,Female,21,9340.83,Government,7939.71,1401.12,Discharged,No,81,Dr. Santos
+PAT-0086,2024-10-10,2024-10-12,Oncology,Colorectal Cancer,50,Female,2,63041.15,Medicaid,56737.04,6304.11,Discharged,No,66,Dr. Rosenberg
+PAT-0087,2024-03-12,2024-03-14,Neurology,Stroke,25,Female,2,3189.35,Government,2710.95,478.4,Transferred,No,84,Dr. Torres
+PAT-0088,2024-01-09,2024-01-11,General Surgery,Bowel Resection,44,Male,2,6080.33,Private,4864.26,1216.07,Still Admitted,No,73,Dr. Hassan
+PAT-0089,2024-02-06,2024-02-08,Neurology,Stroke,19,Male,2,46853.88,Private,37483.1,9370.78,Still Admitted,No,99,Dr. Okonkwo
+PAT-0090,2024-03-29,2024-04-19,Cardiology,Heart Failure,7,Male,21,86019.19,Private,68815.35,17203.84,Discharged,No,70,Dr. Rosenberg
+PAT-0091,2024-11-11,2024-11-11,Outpatient,Follow-Up,29,Male,0,6744.97,Medicare,5058.73,1686.24,Still Admitted,No,85,Dr. Hassan
+PAT-0092,2024-03-11,2024-03-22,ICU,Septic Shock,28,Female,11,72790.27,Government,61871.73,10918.54,Discharged,No,64,Dr. Nguyen
+PAT-0093,2024-12-22,2025-01-03,Oncology,Lung Cancer,71,Male,12,16343.58,Medicare,12257.68,4085.9,Still Admitted,No,62,Dr. Hassan
+PAT-0094,2024-03-21,2024-03-22,Maternity,Preeclampsia,63,Female,1,8404.07,Private,6723.26,1680.81,Still Admitted,No,65,Dr. Rosenberg
+PAT-0095,2024-04-15,2024-04-20,Oncology,Breast Cancer,82,Male,5,26323.47,Self-Pay,0.0,26323.47,Still Admitted,No,71,Dr. Rosenberg
+PAT-0096,2024-02-15,2024-02-15,Outpatient,Vaccination,81,Male,0,78654.75,Medicaid,70789.28,7865.47,Discharged,No,60,Dr. Torres
+PAT-0097,2024-11-12,2024-11-24,Orthopedics,Spinal Stenosis,70,Male,12,48610.34,Self-Pay,0.0,48610.34,Discharged,No,73,Dr. Williams
+PAT-0098,2024-12-16,2025-01-01,Oncology,Colorectal Cancer,64,Male,16,17409.7,Private,13927.76,3481.94,Transferred,Yes,83,Dr. Kim
+PAT-0099,2024-11-11,2024-11-26,Pediatrics,Asthma,6,Male,15,10636.47,Private,8509.18,2127.29,Transferred,No,71,Dr. Torres
+PAT-0100,2024-02-06,2024-02-14,Orthopedics,Knee Replacement,57,Male,8,56632.97,Medicaid,50969.67,5663.3,Discharged,No,80,Dr. Santos
+PAT-0101,2024-05-01,2024-05-15,Orthopedics,Arthritis,26,Male,14,36175.15,Medicare,27131.36,9043.79,Transferred,Yes,97,Dr. Okonkwo
+PAT-0102,2024-11-08,2024-11-23,Neurology,Migraine,23,Female,15,37286.51,Medicare,27964.88,9321.63,Discharged,No,72,Dr. Patel
+PAT-0103,2024-01-17,2024-02-05,Oncology,Lymphoma,8,Male,19,27232.91,Private,21786.33,5446.58,Discharged,No,89,Dr. Santos
+PAT-0104,2024-11-05,2024-11-11,Emergency,Chest Pain,82,Male,6,90550.01,Medicare,67912.51,22637.5,Transferred,No,95,Dr. Torres
+PAT-0105,2024-04-20,2024-05-09,General Surgery,Cholecystectomy,61,Male,19,79644.37,Medicaid,71679.93,7964.44,Discharged,Yes,87,Dr. Nguyen
+PAT-0106,2024-04-23,2024-04-23,Outpatient,Routine Checkup,76,Male,0,89936.97,Government,76446.42,13490.55,Transferred,No,86,Dr. Torres
+PAT-0107,2024-08-05,2024-08-22,Cardiology,Heart Failure,51,Male,17,45947.17,Private,36757.74,9189.43,Still Admitted,No,75,Dr. Nguyen
+PAT-0108,2024-03-08,2024-03-20,Neurology,Epilepsy,38,Female,12,23319.68,Private,18655.74,4663.94,Deceased,Yes,79,Dr. Hassan
+PAT-0109,2024-08-20,2024-09-04,Cardiology,Hypertension,18,Male,15,83149.55,Self-Pay,0.0,83149.55,Still Admitted,No,83,Dr. Williams
+PAT-0110,2024-12-19,2024-12-30,Maternity,C-Section,68,Male,11,3881.68,Self-Pay,0.0,3881.68,Deceased,No,99,Dr. Patel
+PAT-0111,2024-09-20,2024-10-02,Cardiology,Coronary Artery Disease,7,Female,12,11253.05,Medicaid,10127.74,1125.31,Discharged,No,62,Dr. Torres
+PAT-0112,2024-10-14,2024-10-21,Orthopedics,Knee Replacement,18,Male,7,93233.9,Medicare,69925.42,23308.48,Discharged,No,90,Dr. Patel
+PAT-0113,2024-09-14,2024-09-28,Emergency,Trauma,36,Female,14,5930.13,Medicaid,5337.12,593.01,Still Admitted,No,91,Dr. Torres
+PAT-0114,2024-05-29,2024-06-13,ICU,Septic Shock,80,Male,15,35479.34,Private,28383.47,7095.87,Transferred,No,89,Dr. Okonkwo
+PAT-0115,2024-02-09,2024-02-13,Emergency,Trauma,22,Female,4,26793.81,Medicare,20095.36,6698.45,Transferred,No,73,Dr. Torres
+PAT-0116,2024-08-30,2024-09-11,Oncology,Breast Cancer,54,Male,12,42611.62,Private,34089.3,8522.32,Deceased,No,64,Dr. Patel
+PAT-0117,2024-10-23,2024-11-03,Maternity,Gestational Diabetes,84,Female,11,61658.03,Medicaid,55492.23,6165.8,Discharged,No,93,Dr. Hassan
+PAT-0118,2024-06-05,2024-06-11,Oncology,Lung Cancer,34,Female,6,22162.86,Medicaid,19946.57,2216.29,Discharged,No,63,Dr. Rosenberg
+PAT-0119,2024-11-12,2024-11-18,Oncology,Lung Cancer,69,Male,6,27670.23,Medicare,20752.67,6917.56,Discharged,No,69,Dr. Mehta
+PAT-0120,2024-10-21,2024-10-26,Pediatrics,Appendicitis,57,Female,5,25330.36,Medicare,18997.77,6332.59,Discharged,No,62,Dr. Patel
+PAT-0121,2024-10-03,2024-10-09,General Surgery,Cholecystectomy,69,Female,6,29206.93,Private,23365.54,5841.39,Discharged,No,91,Dr. Okonkwo
+PAT-0122,2024-10-06,2024-10-23,Cardiology,Arrhythmia,43,Female,17,61770.38,Medicaid,55593.34,6177.04,Discharged,No,78,Dr. Williams
+PAT-0123,2024-01-21,2024-01-26,General Surgery,Cholecystectomy,87,Female,5,52700.43,Medicaid,47430.39,5270.04,Discharged,Yes,99,Dr. Williams
+PAT-0124,2024-01-29,2024-02-18,Pediatrics,Asthma,83,Male,20,19183.11,Government,16305.64,2877.47,Discharged,No,77,Dr. Torres
+PAT-0125,2024-12-12,2024-12-15,General Surgery,Appendectomy,66,Female,3,37954.7,Self-Pay,0.0,37954.7,Transferred,No,98,Dr. Okonkwo
+PAT-0126,2024-07-08,2024-07-21,Maternity,Normal Delivery,48,Male,13,1948.37,Medicaid,1753.53,194.84,Still Admitted,No,88,Dr. Rosenberg
+PAT-0127,2024-08-14,2024-08-24,Maternity,C-Section,21,Male,10,76694.38,Self-Pay,0.0,76694.38,Discharged,No,86,Dr. Santos
+PAT-0128,2024-08-31,2024-09-17,Emergency,Trauma,43,Female,17,7028.11,Government,5973.89,1054.22,Still Admitted,No,65,Dr. Kim
+PAT-0129,2024-03-30,2024-04-17,Maternity,Preeclampsia,60,Female,18,67705.27,Medicare,50778.95,16926.32,Discharged,No,84,Dr. Kim
+PAT-0130,2024-06-04,2024-06-04,Outpatient,Vaccination,64,Female,0,53484.28,Self-Pay,0.0,53484.28,Discharged,No,60,Dr. Rosenberg
+PAT-0131,2024-11-30,2024-12-10,Orthopedics,Arthritis,54,Male,10,17696.87,Medicare,13272.65,4424.22,Deceased,Yes,77,Dr. Patel
+PAT-0132,2024-09-03,2024-09-03,Outpatient,Routine Checkup,73,Female,0,41877.65,Medicaid,37689.89,4187.76,Deceased,No,90,Dr. Hassan
+PAT-0133,2024-05-12,2024-05-18,Cardiology,Coronary Artery Disease,75,Male,6,6311.68,Medicaid,5680.51,631.17,Discharged,No,68,Dr. Kim
+PAT-0134,2024-08-02,2024-08-23,Pediatrics,Asthma,46,Male,21,5388.94,Medicaid,4850.05,538.89,Discharged,No,64,Dr. Hassan
+PAT-0135,2024-10-05,2024-10-16,Oncology,Breast Cancer,41,Female,11,78686.63,Medicaid,70817.97,7868.66,Discharged,No,83,Dr. Mehta
+PAT-0136,2024-09-22,2024-10-02,Oncology,Breast Cancer,48,Male,10,74163.7,Self-Pay,0.0,74163.7,Discharged,No,70,Dr. Torres
+PAT-0137,2024-04-06,2024-04-24,Neurology,Stroke,79,Female,18,65765.3,Government,55900.5,9864.8,Transferred,No,95,Dr. Williams
+PAT-0138,2024-03-08,2024-03-09,Orthopedics,Spinal Stenosis,62,Male,1,33601.37,Medicaid,30241.23,3360.14,Still Admitted,No,88,Dr. Kim
+PAT-0139,2024-03-01,2024-03-09,Cardiology,Arrhythmia,17,Male,8,81511.99,Medicare,61133.99,20378.0,Discharged,No,79,Dr. Williams
+PAT-0140,2024-12-19,2024-12-23,Maternity,C-Section,10,Male,4,2571.56,Self-Pay,0.0,2571.56,Discharged,No,62,Dr. Torres
+PAT-0141,2024-01-31,2024-01-31,Outpatient,Routine Checkup,61,Male,0,12002.47,Medicaid,10802.22,1200.25,Discharged,Yes,79,Dr. Hassan
+PAT-0142,2024-10-27,2024-11-03,Neurology,Migraine,24,Female,7,63970.58,Private,51176.46,12794.12,Discharged,No,77,Dr. Torres
+PAT-0143,2024-05-03,2024-05-03,Outpatient,Vaccination,65,Male,0,54516.17,Private,43612.94,10903.23,Discharged,No,60,Dr. Okonkwo
+PAT-0144,2024-01-03,2024-01-07,ICU,Respiratory Failure,28,Female,4,87508.95,Self-Pay,0.0,87508.95,Still Admitted,No,97,Dr. Williams
+PAT-0145,2024-06-30,2024-07-13,Oncology,Breast Cancer,55,Female,13,20984.61,Medicare,15738.46,5246.15,Discharged,No,80,Dr. Torres
+PAT-0146,2024-09-10,2024-09-22,Oncology,Breast Cancer,37,Female,12,53281.85,Private,42625.48,10656.37,Discharged,No,91,Dr. Rosenberg
+PAT-0147,2024-06-08,2024-06-08,Outpatient,Follow-Up,88,Female,0,92756.07,Self-Pay,0.0,92756.07,Discharged,No,86,Dr. Williams
+PAT-0148,2024-12-13,2024-12-25,General Surgery,Bowel Resection,23,Male,12,2004.43,Self-Pay,0.0,2004.43,Discharged,No,85,Dr. Okonkwo
+PAT-0149,2024-07-24,2024-08-12,Maternity,Preeclampsia,14,Male,19,70642.91,Medicare,52982.18,17660.73,Deceased,Yes,72,Dr. Nguyen
+PAT-0150,2024-04-29,2024-05-13,Orthopedics,Spinal Stenosis,64,Female,14,27036.43,Government,22980.97,4055.46,Still Admitted,No,85,Dr. Hassan
+PAT-0151,2024-09-05,2024-09-22,Maternity,Gestational Diabetes,36,Female,17,14682.64,Self-Pay,0.0,14682.64,Discharged,No,76,Dr. Okonkwo
+PAT-0152,2024-02-20,2024-02-22,Cardiology,Coronary Artery Disease,9,Male,2,47724.31,Private,38179.45,9544.86,Discharged,No,84,Dr. Hassan
+PAT-0153,2024-02-19,2024-02-19,Outpatient,Vaccination,10,Female,0,63073.79,Government,53612.72,9461.07,Still Admitted,No,89,Dr. Rosenberg
+PAT-0154,2024-09-15,2024-09-24,General Surgery,Bowel Resection,70,Male,9,33168.59,Government,28193.3,4975.29,Transferred,No,62,Dr. Rosenberg
+PAT-0155,2024-07-11,2024-07-26,Pediatrics,Asthma,59,Female,15,4189.42,Medicare,3142.07,1047.35,Transferred,No,79,Dr. Okonkwo
+PAT-0156,2024-07-18,2024-08-03,Emergency,Respiratory Distress,15,Female,16,54386.16,Self-Pay,0.0,54386.16,Deceased,No,94,Dr. Okonkwo
+PAT-0157,2024-01-29,2024-02-11,ICU,Post-Op Monitoring,34,Female,13,47399.9,Self-Pay,0.0,47399.9,Discharged,No,82,Dr. Mehta
+PAT-0158,2024-01-24,2024-01-24,Outpatient,Routine Checkup,17,Female,0,79639.2,Medicaid,71675.28,7963.92,Transferred,No,97,Dr. Williams
+PAT-0159,2024-06-25,2024-07-07,Maternity,Normal Delivery,53,Male,12,33889.56,Medicare,25417.17,8472.39,Discharged,No,79,Dr. Williams
+PAT-0160,2024-03-27,2024-03-28,Pediatrics,Fever NOS,69,Female,1,31520.21,Self-Pay,0.0,31520.21,Discharged,No,87,Dr. Rosenberg
+PAT-0161,2024-01-12,2024-01-12,Outpatient,Minor Procedure,41,Male,0,36382.88,Self-Pay,0.0,36382.88,Still Admitted,No,66,Dr. Santos
+PAT-0162,2024-09-11,2024-09-28,Pediatrics,Asthma,86,Female,17,32784.61,Government,27866.92,4917.69,Still Admitted,No,87,Dr. Williams
+PAT-0163,2024-04-19,2024-04-29,ICU,Septic Shock,34,Male,10,5277.45,Government,4485.83,791.62,Deceased,No,74,Dr. Patel
+PAT-0164,2024-02-04,2024-02-23,Emergency,Acute Abdomen,68,Female,19,45570.28,Medicare,34177.71,11392.57,Transferred,No,64,Dr. Torres
+PAT-0165,2024-04-12,2024-04-26,Pediatrics,Asthma,52,Male,14,24469.14,Government,20798.77,3670.37,Still Admitted,No,95,Dr. Torres
+PAT-0166,2024-10-22,2024-11-07,Oncology,Lymphoma,28,Male,16,63047.95,Self-Pay,0.0,63047.95,Deceased,No,100,Dr. Santos
+PAT-0167,2024-08-24,2024-08-29,Pediatrics,Appendicitis,31,Male,5,14974.52,Medicaid,13477.07,1497.45,Still Admitted,No,86,Dr. Santos
+PAT-0168,2024-05-16,2024-05-26,Maternity,Normal Delivery,83,Male,10,15927.04,Government,13537.98,2389.06,Discharged,No,75,Dr. Mehta
+PAT-0169,2024-06-07,2024-06-22,Neurology,Epilepsy,63,Male,15,53535.52,Self-Pay,0.0,53535.52,Discharged,No,62,Dr. Okonkwo
+PAT-0170,2024-05-12,2024-05-21,Cardiology,Heart Failure,85,Male,9,52676.52,Private,42141.22,10535.3,Discharged,No,91,Dr. Patel
+PAT-0171,2024-06-01,2024-06-01,Outpatient,Minor Procedure,9,Male,0,85634.15,Self-Pay,0.0,85634.15,Discharged,No,65,Dr. Williams
+PAT-0172,2024-09-13,2024-09-13,Outpatient,Follow-Up,16,Female,0,49968.4,Government,42473.14,7495.26,Discharged,No,93,Dr. Santos
+PAT-0173,2024-03-03,2024-03-03,Outpatient,Minor Procedure,41,Male,0,31818.73,Government,27045.92,4772.81,Discharged,No,75,Dr. Williams
+PAT-0174,2024-04-19,2024-04-28,Oncology,Colorectal Cancer,57,Male,9,39268.98,Government,33378.63,5890.35,Discharged,Yes,94,Dr. Torres
+PAT-0175,2024-08-31,2024-09-08,Maternity,Preeclampsia,36,Male,8,83642.64,Medicare,62731.98,20910.66,Still Admitted,No,83,Dr. Hassan
+PAT-0176,2024-12-05,2024-12-07,Cardiology,Coronary Artery Disease,89,Female,2,87224.48,Medicare,65418.36,21806.12,Still Admitted,No,84,Dr. Williams
+PAT-0177,2024-05-01,2024-05-16,ICU,Post-Op Monitoring,50,Male,15,1540.99,Self-Pay,0.0,1540.99,Discharged,No,76,Dr. Kim
+PAT-0178,2024-03-23,2024-04-07,Neurology,Stroke,81,Female,15,30678.77,Self-Pay,0.0,30678.77,Transferred,No,77,Dr. Nguyen
+PAT-0179,2024-08-04,2024-08-08,Pediatrics,Appendicitis,21,Female,4,66597.02,Government,56607.47,9989.55,Still Admitted,Yes,86,Dr. Mehta
+PAT-0180,2024-11-24,2024-12-15,Cardiology,Coronary Artery Disease,24,Female,21,60160.73,Medicare,45120.55,15040.18,Deceased,Yes,72,Dr. Williams
+PAT-0181,2024-03-21,2024-03-29,Orthopedics,Spinal Stenosis,67,Female,8,68017.72,Medicare,51013.29,17004.43,Transferred,No,86,Dr. Okonkwo
+PAT-0182,2024-03-29,2024-04-17,Emergency,Chest Pain,42,Female,19,76115.6,Medicare,57086.7,19028.9,Transferred,No,83,Dr. Hassan
+PAT-0183,2024-01-11,2024-01-12,Neurology,Epilepsy,72,Female,1,61757.45,Medicare,46318.09,15439.36,Still Admitted,No,89,Dr. Okonkwo
+PAT-0184,2024-07-24,2024-08-13,Cardiology,Arrhythmia,55,Male,20,57357.0,Medicare,43017.75,14339.25,Discharged,No,83,Dr. Torres
+PAT-0185,2024-08-20,2024-09-05,Maternity,Preeclampsia,16,Female,16,21946.39,Medicare,16459.79,5486.6,Transferred,No,77,Dr. Okonkwo
+PAT-0186,2024-04-15,2024-05-05,Maternity,Gestational Diabetes,28,Male,20,94548.54,Medicaid,85093.69,9454.85,Transferred,No,72,Dr. Okonkwo
+PAT-0187,2024-05-28,2024-06-06,Cardiology,Heart Failure,31,Male,9,58985.48,Medicare,44239.11,14746.37,Transferred,No,89,Dr. Okonkwo
+PAT-0188,2024-12-20,2025-01-02,Pediatrics,Appendicitis,88,Male,13,20790.9,Self-Pay,0.0,20790.9,Discharged,No,98,Dr. Torres
+PAT-0189,2024-01-27,2024-02-07,Cardiology,Heart Failure,31,Male,11,45161.83,Medicaid,40645.65,4516.18,Discharged,No,98,Dr. Torres
+PAT-0190,2024-07-14,2024-07-14,Outpatient,Routine Checkup,39,Male,0,92882.75,Medicaid,83594.48,9288.27,Discharged,No,95,Dr. Okonkwo
+PAT-0191,2024-09-09,2024-09-20,ICU,Respiratory Failure,60,Female,11,13226.82,Medicaid,11904.14,1322.68,Discharged,No,87,Dr. Patel
+PAT-0192,2024-03-06,2024-03-22,Cardiology,Coronary Artery Disease,36,Female,16,71244.96,Self-Pay,0.0,71244.96,Transferred,No,76,Dr. Okonkwo
+PAT-0193,2024-09-08,2024-09-13,Pediatrics,Pneumonia,72,Male,5,81155.77,Self-Pay,0.0,81155.77,Discharged,Yes,69,Dr. Mehta
+PAT-0194,2024-05-13,2024-05-19,General Surgery,Bowel Resection,60,Female,6,41911.69,Self-Pay,0.0,41911.69,Transferred,Yes,82,Dr. Williams
+PAT-0195,2024-03-04,2024-03-16,Oncology,Colorectal Cancer,12,Male,12,19991.72,Medicaid,17992.55,1999.17,Deceased,No,70,Dr. Mehta
+PAT-0196,2024-10-19,2024-10-25,ICU,Post-Op Monitoring,54,Male,6,87502.92,Medicare,65627.19,21875.73,Discharged,No,66,Dr. Williams
+PAT-0197,2024-07-10,2024-07-29,Maternity,Gestational Diabetes,14,Female,19,79643.25,Medicare,59732.44,19910.81,Still Admitted,Yes,89,Dr. Kim
+PAT-0198,2024-12-02,2024-12-02,Outpatient,Follow-Up,1,Male,0,31832.02,Private,25465.62,6366.4,Discharged,No,88,Dr. Mehta
+PAT-0199,2024-06-14,2024-06-16,Emergency,Acute Abdomen,10,Male,2,52342.12,Government,44490.8,7851.32,Discharged,No,85,Dr. Nguyen
+PAT-0200,2024-01-11,2024-01-18,Orthopedics,Fracture,21,Female,7,37396.97,Self-Pay,0.0,37396.97,Transferred,No,69,Dr. Nguyen
+PAT-0201,2024-12-16,2025-01-05,Emergency,Chest Pain,17,Female,20,34621.97,Private,27697.58,6924.39,Transferred,No,92,Dr. Nguyen
+PAT-0202,2024-05-17,2024-06-05,General Surgery,Cholecystectomy,77,Female,19,40653.25,Self-Pay,0.0,40653.25,Still Admitted,No,99,Dr. Nguyen
+PAT-0203,2024-01-21,2024-02-07,Orthopedics,Arthritis,44,Male,17,92482.2,Medicare,69361.65,23120.55,Discharged,No,69,Dr. Rosenberg
+PAT-0204,2024-02-10,2024-02-26,Maternity,C-Section,39,Female,16,14798.74,Medicare,11099.06,3699.68,Discharged,No,79,Dr. Hassan
+PAT-0205,2024-10-09,2024-10-12,Cardiology,Hypertension,6,Female,3,49163.65,Government,41789.1,7374.55,Discharged,No,66,Dr. Kim
+PAT-0206,2024-02-11,2024-02-11,Outpatient,Minor Procedure,65,Male,0,2332.51,Self-Pay,0.0,2332.51,Discharged,No,71,Dr. Nguyen
+PAT-0207,2024-06-09,2024-06-28,Emergency,Acute Abdomen,59,Male,19,72142.77,Self-Pay,0.0,72142.77,Discharged,No,76,Dr. Okonkwo
+PAT-0208,2024-11-05,2024-11-14,Orthopedics,Fracture,87,Male,9,10816.35,Government,9193.9,1622.45,Discharged,Yes,85,Dr. Rosenberg
+PAT-0209,2024-12-20,2025-01-02,General Surgery,Hernia Repair,85,Female,13,91778.72,Government,78011.91,13766.81,Discharged,No,79,Dr. Williams
+PAT-0210,2024-03-10,2024-03-11,Oncology,Breast Cancer,25,Male,1,11342.16,Private,9073.73,2268.43,Transferred,No,72,Dr. Okonkwo
+PAT-0211,2024-08-11,2024-09-01,Neurology,Parkinson's,69,Female,21,18784.14,Medicaid,16905.73,1878.41,Discharged,No,69,Dr. Williams
+PAT-0212,2024-03-19,2024-04-03,Oncology,Colorectal Cancer,63,Female,15,45214.28,Self-Pay,0.0,45214.28,Discharged,No,72,Dr. Patel
+PAT-0213,2024-02-22,2024-03-14,Cardiology,Coronary Artery Disease,56,Male,21,93067.67,Self-Pay,0.0,93067.67,Transferred,No,98,Dr. Nguyen
+PAT-0214,2024-09-19,2024-10-08,General Surgery,Appendectomy,79,Female,19,88903.47,Self-Pay,0.0,88903.47,Deceased,No,63,Dr. Patel
+PAT-0215,2024-02-02,2024-02-11,ICU,Post-Op Monitoring,83,Female,9,40094.35,Self-Pay,0.0,40094.35,Still Admitted,No,99,Dr. Nguyen
+PAT-0216,2024-03-23,2024-04-02,Cardiology,Coronary Artery Disease,25,Female,10,45002.45,Self-Pay,0.0,45002.45,Discharged,No,74,Dr. Kim
+PAT-0217,2024-08-01,2024-08-22,Maternity,Normal Delivery,47,Female,21,75780.62,Medicare,56835.46,18945.16,Discharged,No,78,Dr. Okonkwo
+PAT-0218,2024-03-21,2024-04-10,Neurology,Migraine,63,Male,20,10305.13,Self-Pay,0.0,10305.13,Discharged,No,91,Dr. Torres
+PAT-0219,2024-01-10,2024-01-22,Cardiology,Heart Failure,34,Male,12,34433.53,Medicare,25825.15,8608.38,Discharged,No,92,Dr. Nguyen
+PAT-0220,2024-11-12,2024-11-20,Orthopedics,Spinal Stenosis,16,Male,8,53738.65,Self-Pay,0.0,53738.65,Deceased,No,81,Dr. Kim
+PAT-0221,2024-12-19,2025-01-05,Oncology,Lymphoma,78,Male,17,63865.57,Private,51092.46,12773.11,Discharged,No,88,Dr. Hassan
+PAT-0222,2024-02-22,2024-02-22,Outpatient,Vaccination,72,Female,0,4753.52,Private,3802.82,950.7,Discharged,No,67,Dr. Kim
+PAT-0223,2024-09-16,2024-10-02,General Surgery,Appendectomy,13,Male,16,15334.66,Medicaid,13801.19,1533.47,Transferred,No,68,Dr. Nguyen
+PAT-0224,2024-05-05,2024-05-21,Cardiology,Hypertension,44,Female,16,27812.63,Medicare,20859.47,6953.16,Still Admitted,No,83,Dr. Santos
+PAT-0225,2024-09-28,2024-10-12,Oncology,Lymphoma,30,Female,14,13799.07,Self-Pay,0.0,13799.07,Discharged,No,86,Dr. Rosenberg
+PAT-0226,2024-01-06,2024-01-23,Oncology,Lymphoma,9,Male,17,8786.11,Medicaid,7907.5,878.61,Transferred,No,70,Dr. Mehta
+PAT-0227,2024-10-21,2024-10-23,Oncology,Lymphoma,81,Female,2,93120.43,Government,79152.37,13968.06,Still Admitted,No,86,Dr. Patel
+PAT-0228,2024-01-05,2024-01-14,Pediatrics,Asthma,68,Female,9,58299.78,Medicare,43724.83,14574.95,Still Admitted,No,88,Dr. Patel
+PAT-0229,2024-04-11,2024-04-21,Maternity,Preeclampsia,11,Male,10,4282.59,Medicaid,3854.33,428.26,Discharged,No,68,Dr. Torres
+PAT-0230,2024-06-08,2024-06-25,ICU,Post-Op Monitoring,44,Male,17,72113.76,Medicare,54085.32,18028.44,Discharged,Yes,94,Dr. Nguyen
+PAT-0231,2024-02-26,2024-02-28,ICU,Septic Shock,48,Female,2,25269.06,Government,21478.7,3790.36,Discharged,No,63,Dr. Hassan
+PAT-0232,2024-08-20,2024-08-31,Cardiology,Arrhythmia,31,Female,11,76667.51,Government,65167.38,11500.13,Discharged,No,100,Dr. Kim
+PAT-0233,2024-12-10,2024-12-10,Outpatient,Follow-Up,18,Male,0,68091.86,Government,57878.08,10213.78,Discharged,No,66,Dr. Rosenberg
+PAT-0234,2024-03-16,2024-03-30,Orthopedics,Arthritis,53,Male,14,8519.42,Private,6815.54,1703.88,Transferred,No,68,Dr. Williams
+PAT-0235,2024-12-12,2024-12-29,Pediatrics,Fever NOS,52,Female,17,56212.16,Government,47780.34,8431.82,Transferred,No,76,Dr. Rosenberg
+PAT-0236,2024-03-24,2024-03-29,Maternity,Normal Delivery,65,Male,5,12775.08,Self-Pay,0.0,12775.08,Transferred,No,92,Dr. Rosenberg
+PAT-0237,2024-03-21,2024-04-08,Cardiology,Heart Failure,48,Male,18,87623.89,Private,70099.11,17524.78,Discharged,No,86,Dr. Hassan
+PAT-0238,2024-01-21,2024-02-07,Emergency,Acute Abdomen,20,Female,17,11891.32,Medicaid,10702.19,1189.13,Discharged,No,79,Dr. Okonkwo
+PAT-0239,2024-10-28,2024-11-11,Oncology,Lung Cancer,7,Female,14,89048.51,Medicaid,80143.66,8904.85,Discharged,No,73,Dr. Williams
+PAT-0240,2024-06-27,2024-06-30,ICU,Post-Op Monitoring,6,Female,3,40135.58,Government,34115.24,6020.34,Transferred,No,88,Dr. Hassan
+PAT-0241,2024-03-11,2024-03-28,Oncology,Colorectal Cancer,82,Male,17,44220.19,Self-Pay,0.0,44220.19,Deceased,No,69,Dr. Hassan
+PAT-0242,2024-07-17,2024-07-25,Maternity,Preeclampsia,51,Male,8,32733.6,Private,26186.88,6546.72,Discharged,No,88,Dr. Mehta
+PAT-0243,2024-11-18,2024-11-18,Outpatient,Vaccination,40,Male,0,53650.38,Private,42920.3,10730.08,Deceased,No,65,Dr. Torres
+PAT-0244,2024-08-31,2024-09-17,Neurology,Migraine,3,Male,17,12130.68,Government,10311.08,1819.6,Discharged,No,61,Dr. Hassan
+PAT-0245,2024-02-13,2024-03-02,General Surgery,Hernia Repair,78,Female,18,30984.62,Government,26336.93,4647.69,Discharged,Yes,61,Dr. Nguyen
+PAT-0246,2024-09-27,2024-10-08,Cardiology,Arrhythmia,49,Female,11,25026.15,Private,20020.92,5005.23,Discharged,No,94,Dr. Okonkwo
+PAT-0247,2024-02-15,2024-02-20,Emergency,Chest Pain,40,Male,5,90493.92,Medicare,67870.44,22623.48,Still Admitted,Yes,80,Dr. Mehta
+PAT-0248,2024-07-18,2024-07-22,Emergency,Trauma,41,Male,4,14219.78,Medicaid,12797.8,1421.98,Discharged,No,67,Dr. Hassan
+PAT-0249,2024-05-01,2024-05-01,Outpatient,Follow-Up,64,Male,0,48712.12,Government,41405.3,7306.82,Discharged,No,67,Dr. Rosenberg
+PAT-0250,2024-07-27,2024-07-30,ICU,Post-Op Monitoring,62,Male,3,3522.99,Medicare,2642.24,880.75,Discharged,No,61,Dr. Torres
+PAT-0251,2024-06-04,2024-06-23,Oncology,Colorectal Cancer,53,Male,19,42811.53,Government,36389.8,6421.73,Discharged,No,69,Dr. Torres
+PAT-0252,2024-10-11,2024-10-26,Maternity,Preeclampsia,6,Male,15,894.3,Self-Pay,0.0,894.3,Discharged,No,99,Dr. Mehta
+PAT-0253,2024-05-19,2024-06-08,General Surgery,Cholecystectomy,33,Female,20,79879.74,Self-Pay,0.0,79879.74,Discharged,No,100,Dr. Okonkwo
+PAT-0254,2024-10-15,2024-10-18,ICU,Post-Op Monitoring,39,Female,3,9251.16,Private,7400.93,1850.23,Discharged,No,95,Dr. Hassan
+PAT-0255,2024-06-11,2024-06-22,ICU,Post-Op Monitoring,82,Male,11,25420.16,Self-Pay,0.0,25420.16,Transferred,No,80,Dr. Hassan
+PAT-0256,2024-01-09,2024-01-14,Pediatrics,Asthma,83,Female,5,87676.68,Government,74525.18,13151.5,Deceased,No,60,Dr. Rosenberg
+PAT-0257,2024-10-02,2024-10-05,Maternity,Normal Delivery,84,Female,3,62149.3,Government,52826.9,9322.4,Transferred,Yes,88,Dr. Hassan
+PAT-0258,2024-07-17,2024-07-23,Pediatrics,Fever NOS,90,Male,6,93473.54,Private,74778.83,18694.71,Discharged,No,72,Dr. Mehta
+PAT-0259,2024-12-14,2024-12-26,Emergency,Chest Pain,25,Female,12,9274.85,Government,7883.62,1391.23,Discharged,No,74,Dr. Mehta
+PAT-0260,2024-09-09,2024-09-29,Emergency,Respiratory Distress,27,Male,20,1472.15,Self-Pay,0.0,1472.15,Deceased,No,77,Dr. Santos
+PAT-0261,2024-12-10,2024-12-10,Outpatient,Routine Checkup,88,Male,0,57600.01,Medicare,43200.01,14400.0,Discharged,Yes,68,Dr. Hassan
+PAT-0262,2024-09-24,2024-10-03,Neurology,Migraine,25,Female,9,80650.25,Private,64520.2,16130.05,Discharged,No,94,Dr. Nguyen
+PAT-0263,2024-06-14,2024-06-28,Cardiology,Heart Failure,53,Male,14,26614.15,Government,22622.03,3992.12,Discharged,No,83,Dr. Kim
+PAT-0264,2024-09-29,2024-10-14,Maternity,Normal Delivery,41,Male,15,1286.0,Medicare,964.5,321.5,Still Admitted,No,96,Dr. Nguyen
+PAT-0265,2024-05-07,2024-05-14,Orthopedics,Fracture,22,Female,7,31812.96,Private,25450.37,6362.59,Transferred,No,66,Dr. Mehta
+PAT-0266,2024-11-16,2024-11-16,Outpatient,Follow-Up,43,Male,0,79975.81,Medicare,59981.86,19993.95,Discharged,No,75,Dr. Torres
+PAT-0267,2024-02-07,2024-02-27,Neurology,Stroke,80,Male,20,42109.48,Private,33687.58,8421.9,Discharged,No,97,Dr. Mehta
+PAT-0268,2024-06-09,2024-06-12,Maternity,Gestational Diabetes,17,Male,3,6640.61,Self-Pay,0.0,6640.61,Discharged,Yes,99,Dr. Mehta
+PAT-0269,2024-01-27,2024-02-06,ICU,Septic Shock,49,Female,10,38638.54,Government,32842.76,5795.78,Transferred,No,74,Dr. Rosenberg
+PAT-0270,2024-11-13,2024-12-03,Maternity,C-Section,13,Male,20,32791.87,Private,26233.5,6558.37,Discharged,No,81,Dr. Mehta
+PAT-0271,2024-12-31,2024-12-31,Outpatient,Follow-Up,9,Female,0,56649.91,Medicare,42487.43,14162.48,Transferred,No,68,Dr. Rosenberg
+PAT-0272,2024-08-15,2024-08-15,Outpatient,Minor Procedure,24,Female,0,23704.96,Private,18963.97,4740.99,Discharged,Yes,79,Dr. Hassan
+PAT-0273,2024-03-15,2024-03-20,ICU,Respiratory Failure,61,Male,5,29877.13,Medicaid,26889.42,2987.71,Discharged,No,60,Dr. Torres
+PAT-0274,2024-01-28,2024-02-11,ICU,Septic Shock,45,Female,14,19207.35,Medicare,14405.51,4801.84,Discharged,No,72,Dr. Rosenberg
+PAT-0275,2024-11-03,2024-11-14,General Surgery,Hernia Repair,75,Male,11,54126.33,Medicaid,48713.7,5412.63,Discharged,No,86,Dr. Rosenberg
+PAT-0276,2024-09-10,2024-09-18,Cardiology,Arrhythmia,1,Female,8,60971.86,Medicare,45728.9,15242.96,Still Admitted,No,73,Dr. Patel
+PAT-0277,2024-04-15,2024-04-28,Maternity,Preeclampsia,24,Male,13,78617.14,Private,62893.71,15723.43,Deceased,No,64,Dr. Williams
+PAT-0278,2024-05-28,2024-06-12,Oncology,Lung Cancer,25,Male,15,60271.72,Medicaid,54244.55,6027.17,Discharged,Yes,61,Dr. Okonkwo
+PAT-0279,2024-05-14,2024-05-20,Neurology,Epilepsy,44,Female,6,80637.72,Medicare,60478.29,20159.43,Discharged,No,61,Dr. Mehta
+PAT-0280,2024-07-13,2024-08-03,Oncology,Colorectal Cancer,15,Female,21,32675.7,Medicare,24506.78,8168.92,Still Admitted,No,75,Dr. Okonkwo
+PAT-0281,2024-11-15,2024-11-29,ICU,Multi-Organ Failure,9,Female,14,11962.07,Medicare,8971.55,2990.52,Discharged,No,72,Dr. Hassan
+PAT-0282,2024-11-21,2024-11-29,Maternity,Preeclampsia,6,Male,8,72682.36,Government,61780.01,10902.35,Discharged,No,94,Dr. Santos
+PAT-0283,2024-11-18,2024-11-27,Cardiology,Heart Failure,17,Female,9,81011.55,Government,68859.82,12151.73,Still Admitted,No,73,Dr. Hassan
+PAT-0284,2024-03-26,2024-04-12,Orthopedics,Arthritis,50,Male,17,71573.22,Government,60837.24,10735.98,Discharged,No,93,Dr. Patel
+PAT-0285,2024-12-21,2025-01-06,ICU,Septic Shock,64,Male,16,45428.02,Government,38613.82,6814.2,Discharged,No,97,Dr. Santos
+PAT-0286,2024-04-30,2024-05-13,General Surgery,Hernia Repair,28,Male,13,29625.11,Self-Pay,0.0,29625.11,Discharged,No,83,Dr. Williams
+PAT-0287,2024-08-15,2024-09-01,Emergency,Acute Abdomen,46,Female,17,22482.73,Private,17986.18,4496.55,Transferred,No,99,Dr. Rosenberg
+PAT-0288,2024-07-28,2024-08-09,Maternity,C-Section,64,Female,12,30663.32,Self-Pay,0.0,30663.32,Still Admitted,Yes,88,Dr. Williams
+PAT-0289,2024-02-12,2024-02-22,Pediatrics,Pneumonia,65,Male,10,49104.91,Private,39283.93,9820.98,Discharged,No,74,Dr. Patel
+PAT-0290,2024-10-06,2024-10-13,Cardiology,Arrhythmia,43,Male,7,19324.08,Medicaid,17391.67,1932.41,Still Admitted,No,77,Dr. Torres
+PAT-0291,2024-01-05,2024-01-15,Emergency,Trauma,37,Female,10,78261.49,Self-Pay,0.0,78261.49,Still Admitted,No,97,Dr. Torres
+PAT-0292,2024-07-22,2024-07-30,Oncology,Lymphoma,30,Female,8,68938.24,Medicare,51703.68,17234.56,Discharged,No,93,Dr. Williams
+PAT-0293,2024-04-06,2024-04-20,Pediatrics,Pneumonia,90,Female,14,40146.2,Self-Pay,0.0,40146.2,Discharged,No,95,Dr. Hassan
+PAT-0294,2024-06-05,2024-06-06,Oncology,Lymphoma,64,Female,1,77139.81,Medicaid,69425.83,7713.98,Still Admitted,No,86,Dr. Torres
+PAT-0295,2024-06-15,2024-07-04,Emergency,Acute Abdomen,3,Female,19,54265.79,Private,43412.63,10853.16,Transferred,No,69,Dr. Santos
+PAT-0296,2024-02-02,2024-02-20,Maternity,Preeclampsia,50,Male,18,18541.5,Private,14833.2,3708.3,Discharged,No,88,Dr. Williams
+PAT-0297,2024-03-31,2024-04-02,ICU,Multi-Organ Failure,89,Female,2,57636.88,Private,46109.5,11527.38,Discharged,No,64,Dr. Santos
+PAT-0298,2024-12-03,2024-12-20,Emergency,Acute Abdomen,9,Female,17,43629.32,Medicaid,39266.39,4362.93,Transferred,No,70,Dr. Okonkwo
+PAT-0299,2024-03-07,2024-03-25,Orthopedics,Knee Replacement,54,Male,18,45851.26,Private,36681.01,9170.25,Discharged,No,73,Dr. Nguyen
+PAT-0300,2024-03-22,2024-04-11,General Surgery,Hernia Repair,74,Male,20,89268.33,Government,75878.08,13390.25,Discharged,No,89,Dr. Okonkwo
+PAT-0301,2024-02-02,2024-02-15,General Surgery,Bowel Resection,78,Female,13,76872.7,Government,65341.79,11530.91,Transferred,No,96,Dr. Hassan
+PAT-0302,2024-02-16,2024-02-26,Cardiology,Hypertension,83,Male,10,83789.64,Self-Pay,0.0,83789.64,Transferred,No,79,Dr. Santos
+PAT-0303,2024-11-12,2024-11-26,Oncology,Lymphoma,59,Male,14,37035.44,Medicare,27776.58,9258.86,Discharged,No,66,Dr. Okonkwo
+PAT-0304,2024-11-17,2024-12-05,Emergency,Respiratory Distress,38,Female,18,63599.08,Private,50879.26,12719.82,Deceased,No,73,Dr. Williams
+PAT-0305,2024-02-09,2024-02-13,Pediatrics,Appendicitis,65,Male,4,73007.98,Medicaid,65707.18,7300.8,Deceased,No,70,Dr. Mehta
+PAT-0306,2024-01-14,2024-01-17,General Surgery,Cholecystectomy,82,Female,3,66220.55,Self-Pay,0.0,66220.55,Discharged,No,85,Dr. Mehta
+PAT-0307,2024-02-28,2024-03-04,Emergency,Trauma,42,Male,5,63941.84,Self-Pay,0.0,63941.84,Still Admitted,No,64,Dr. Rosenberg
+PAT-0308,2024-08-29,2024-09-07,Oncology,Colorectal Cancer,21,Male,9,16869.49,Private,13495.59,3373.9,Deceased,No,71,Dr. Nguyen
+PAT-0309,2024-02-09,2024-02-10,Oncology,Breast Cancer,87,Male,1,26540.36,Self-Pay,0.0,26540.36,Transferred,No,73,Dr. Mehta
+PAT-0310,2024-11-24,2024-11-28,ICU,Septic Shock,50,Female,4,65830.66,Self-Pay,0.0,65830.66,Discharged,Yes,60,Dr. Santos
+PAT-0311,2024-05-02,2024-05-09,Pediatrics,Asthma,12,Male,7,2310.82,Private,1848.66,462.16,Discharged,No,81,Dr. Williams
+PAT-0312,2024-03-26,2024-03-28,Oncology,Lung Cancer,54,Male,2,49077.51,Medicaid,44169.76,4907.75,Deceased,No,100,Dr. Nguyen
+PAT-0313,2024-03-02,2024-03-10,Maternity,Preeclampsia,28,Male,8,10774.4,Medicaid,9696.96,1077.44,Transferred,No,85,Dr. Santos
+PAT-0314,2024-04-22,2024-04-25,General Surgery,Cholecystectomy,85,Female,3,77581.0,Government,65943.85,11637.15,Discharged,No,64,Dr. Hassan
+PAT-0315,2024-02-22,2024-03-11,General Surgery,Bowel Resection,73,Male,18,16951.45,Private,13561.16,3390.29,Discharged,No,100,Dr. Okonkwo
+PAT-0316,2024-12-07,2024-12-23,Pediatrics,Fever NOS,9,Male,16,32366.91,Government,27511.87,4855.04,Deceased,No,88,Dr. Hassan
+PAT-0317,2024-04-29,2024-04-30,Cardiology,Arrhythmia,79,Male,1,72292.25,Private,57833.8,14458.45,Discharged,No,87,Dr. Okonkwo
+PAT-0318,2024-09-12,2024-09-22,Pediatrics,Fever NOS,26,Female,10,15087.37,Medicare,11315.53,3771.84,Discharged,No,75,Dr. Kim
+PAT-0319,2024-11-25,2024-11-27,Pediatrics,Pneumonia,67,Male,2,75385.65,Self-Pay,0.0,75385.65,Still Admitted,No,78,Dr. Patel
+PAT-0320,2024-05-04,2024-05-11,Pediatrics,Fever NOS,70,Female,7,5893.77,Medicare,4420.33,1473.44,Discharged,No,74,Dr. Rosenberg
+PAT-0321,2024-02-03,2024-02-19,Cardiology,Arrhythmia,9,Male,16,90634.88,Private,72507.9,18126.98,Discharged,No,69,Dr. Okonkwo
+PAT-0322,2024-10-08,2024-10-08,Outpatient,Follow-Up,27,Male,0,23060.41,Private,18448.33,4612.08,Still Admitted,No,89,Dr. Santos
+PAT-0323,2024-08-05,2024-08-11,Neurology,Epilepsy,78,Female,6,24252.92,Medicaid,21827.63,2425.29,Transferred,No,100,Dr. Williams
+PAT-0324,2024-07-22,2024-08-04,Pediatrics,Asthma,22,Female,13,45141.21,Self-Pay,0.0,45141.21,Discharged,No,87,Dr. Nguyen
+PAT-0325,2024-02-12,2024-02-22,Maternity,Gestational Diabetes,77,Female,10,51404.02,Government,43693.42,7710.6,Discharged,No,76,Dr. Rosenberg
+PAT-0326,2024-07-11,2024-07-29,Emergency,Chest Pain,78,Male,18,46095.54,Medicaid,41485.99,4609.55,Discharged,No,90,Dr. Mehta
+PAT-0327,2024-09-13,2024-09-25,Cardiology,Hypertension,63,Female,12,38909.11,Self-Pay,0.0,38909.11,Discharged,No,83,Dr. Hassan
+PAT-0328,2024-07-28,2024-07-30,Orthopedics,Spinal Stenosis,16,Female,2,37050.61,Government,31493.02,5557.59,Deceased,No,87,Dr. Rosenberg
+PAT-0329,2024-12-22,2024-12-24,Pediatrics,Fever NOS,84,Male,2,37098.38,Self-Pay,0.0,37098.38,Discharged,No,75,Dr. Mehta
+PAT-0330,2024-05-13,2024-06-02,Oncology,Lung Cancer,59,Male,20,89749.78,Medicare,67312.33,22437.45,Discharged,No,98,Dr. Williams
+PAT-0331,2024-07-22,2024-08-10,Maternity,Gestational Diabetes,11,Female,19,49646.19,Medicare,37234.64,12411.55,Still Admitted,No,70,Dr. Kim
+PAT-0332,2024-09-29,2024-10-12,ICU,Septic Shock,76,Female,13,29811.61,Self-Pay,0.0,29811.61,Discharged,No,65,Dr. Kim
+PAT-0333,2024-07-22,2024-08-01,Neurology,Parkinson's,1,Female,10,93777.8,Self-Pay,0.0,93777.8,Still Admitted,Yes,64,Dr. Kim
+PAT-0334,2024-03-28,2024-04-03,Maternity,Normal Delivery,48,Female,6,18358.88,Medicare,13769.16,4589.72,Deceased,No,71,Dr. Santos
+PAT-0335,2024-04-12,2024-04-14,Oncology,Lymphoma,24,Male,2,77024.63,Medicare,57768.47,19256.16,Still Admitted,No,86,Dr. Okonkwo
+PAT-0336,2024-05-30,2024-06-02,Orthopedics,Knee Replacement,49,Female,3,12545.0,Private,10036.0,2509.0,Transferred,No,97,Dr. Williams
+PAT-0337,2024-02-01,2024-02-10,Cardiology,Heart Failure,1,Female,9,63473.36,Private,50778.69,12694.67,Deceased,No,93,Dr. Torres
+PAT-0338,2024-09-05,2024-09-21,Emergency,Acute Abdomen,44,Male,16,57731.8,Medicaid,51958.62,5773.18,Discharged,No,81,Dr. Nguyen
+PAT-0339,2024-11-08,2024-11-10,Maternity,C-Section,46,Male,2,83043.89,Private,66435.11,16608.78,Deceased,Yes,85,Dr. Williams
+PAT-0340,2024-05-23,2024-05-31,ICU,Septic Shock,48,Female,8,43370.68,Self-Pay,0.0,43370.68,Discharged,No,72,Dr. Patel
+PAT-0341,2024-06-15,2024-06-30,Cardiology,Coronary Artery Disease,30,Female,15,57957.08,Self-Pay,0.0,57957.08,Transferred,No,65,Dr. Williams
+PAT-0342,2024-05-30,2024-06-19,Maternity,Normal Delivery,25,Male,20,67864.93,Government,57685.19,10179.74,Transferred,No,92,Dr. Williams
+PAT-0343,2024-12-10,2024-12-28,Emergency,Chest Pain,60,Male,18,16630.58,Self-Pay,0.0,16630.58,Discharged,No,90,Dr. Okonkwo
+PAT-0344,2024-02-24,2024-03-09,Orthopedics,Knee Replacement,4,Female,14,15894.16,Medicaid,14304.74,1589.42,Still Admitted,No,77,Dr. Rosenberg
+PAT-0345,2024-12-06,2024-12-11,Orthopedics,Knee Replacement,69,Male,5,60480.24,Self-Pay,0.0,60480.24,Still Admitted,No,81,Dr. Patel
+PAT-0346,2024-07-14,2024-08-04,Maternity,Preeclampsia,83,Male,21,74754.71,Self-Pay,0.0,74754.71,Discharged,No,74,Dr. Williams
+PAT-0347,2024-02-15,2024-02-26,Orthopedics,Spinal Stenosis,76,Female,11,89085.24,Private,71268.19,17817.05,Deceased,No,68,Dr. Mehta
+PAT-0348,2024-02-01,2024-02-20,Emergency,Acute Abdomen,69,Male,19,18684.59,Self-Pay,0.0,18684.59,Deceased,No,80,Dr. Hassan
+PAT-0349,2024-04-23,2024-04-23,Outpatient,Vaccination,14,Female,0,38038.43,Government,32332.67,5705.76,Discharged,No,80,Dr. Rosenberg
+PAT-0350,2024-03-16,2024-04-05,General Surgery,Appendectomy,37,Female,20,14541.02,Private,11632.82,2908.2,Still Admitted,No,79,Dr. Hassan
+PAT-0351,2024-11-19,2024-11-26,General Surgery,Cholecystectomy,64,Male,7,28258.84,Self-Pay,0.0,28258.84,Still Admitted,Yes,81,Dr. Santos
+PAT-0352,2024-04-01,2024-04-17,Cardiology,Hypertension,51,Female,16,28975.39,Medicare,21731.54,7243.85,Transferred,No,95,Dr. Rosenberg
+PAT-0353,2024-07-19,2024-08-01,Pediatrics,Fever NOS,10,Male,13,50522.95,Medicaid,45470.65,5052.3,Discharged,No,72,Dr. Patel
+PAT-0354,2024-01-28,2024-01-28,Outpatient,Minor Procedure,39,Female,0,43899.56,Medicare,32924.67,10974.89,Discharged,No,88,Dr. Santos
+PAT-0355,2024-04-10,2024-05-01,Neurology,Parkinson's,2,Female,21,34921.67,Government,29683.42,5238.25,Still Admitted,No,69,Dr. Okonkwo
+PAT-0356,2024-02-19,2024-03-02,Cardiology,Coronary Artery Disease,61,Female,12,17721.42,Private,14177.14,3544.28,Discharged,No,92,Dr. Nguyen
+PAT-0357,2024-01-18,2024-01-22,Neurology,Parkinson's,31,Male,4,38163.94,Medicaid,34347.55,3816.39,Transferred,No,71,Dr. Nguyen
+PAT-0358,2024-11-19,2024-12-10,Emergency,Respiratory Distress,57,Male,21,35401.83,Private,28321.46,7080.37,Discharged,No,67,Dr. Hassan
+PAT-0359,2024-10-20,2024-10-20,Outpatient,Minor Procedure,62,Female,0,26584.88,Private,21267.9,5316.98,Still Admitted,No,71,Dr. Nguyen
+PAT-0360,2024-10-19,2024-10-24,Emergency,Respiratory Distress,13,Female,5,31436.57,Government,26721.08,4715.49,Discharged,No,61,Dr. Torres
+PAT-0361,2024-10-02,2024-10-02,Outpatient,Vaccination,84,Male,0,12489.21,Medicare,9366.91,3122.3,Discharged,No,67,Dr. Torres
+PAT-0362,2024-06-09,2024-06-13,General Surgery,Hernia Repair,6,Male,4,12934.47,Medicare,9700.85,3233.62,Discharged,No,65,Dr. Williams
+PAT-0363,2024-06-01,2024-06-13,ICU,Post-Op Monitoring,70,Female,12,16965.02,Private,13572.02,3393.0,Discharged,No,62,Dr. Hassan
+PAT-0364,2024-12-21,2025-01-01,General Surgery,Cholecystectomy,67,Male,11,86595.77,Medicaid,77936.19,8659.58,Still Admitted,No,92,Dr. Mehta
+PAT-0365,2024-01-19,2024-01-26,Neurology,Epilepsy,19,Female,7,29032.61,Medicare,21774.46,7258.15,Discharged,No,98,Dr. Okonkwo
+PAT-0366,2024-08-04,2024-08-04,Outpatient,Minor Procedure,10,Female,0,52595.74,Medicaid,47336.17,5259.57,Discharged,No,70,Dr. Kim
+PAT-0367,2024-12-21,2024-12-26,Maternity,Preeclampsia,69,Male,5,19994.46,Medicaid,17995.01,1999.45,Transferred,No,72,Dr. Okonkwo
+PAT-0368,2024-08-10,2024-08-23,Pediatrics,Pneumonia,4,Female,13,91610.47,Medicare,68707.85,22902.62,Discharged,Yes,67,Dr. Patel
+PAT-0369,2024-07-04,2024-07-15,Orthopedics,Arthritis,35,Male,11,14584.25,Medicare,10938.19,3646.06,Transferred,No,66,Dr. Williams
+PAT-0370,2024-03-30,2024-04-16,Orthopedics,Spinal Stenosis,40,Female,17,56267.51,Self-Pay,0.0,56267.51,Deceased,No,82,Dr. Williams
+PAT-0371,2024-03-28,2024-04-08,Cardiology,Hypertension,50,Male,11,17819.35,Government,15146.45,2672.9,Discharged,No,85,Dr. Mehta
+PAT-0372,2024-12-31,2025-01-05,ICU,Septic Shock,85,Female,5,12703.9,Self-Pay,0.0,12703.9,Still Admitted,No,77,Dr. Santos
+PAT-0373,2024-08-02,2024-08-02,Outpatient,Follow-Up,59,Female,0,18048.45,Medicaid,16243.61,1804.84,Transferred,No,92,Dr. Torres
+PAT-0374,2024-06-05,2024-06-26,Neurology,Stroke,12,Male,21,90050.23,Self-Pay,0.0,90050.23,Still Admitted,No,65,Dr. Santos
+PAT-0375,2024-03-25,2024-04-13,Orthopedics,Fracture,8,Female,19,8767.92,Medicaid,7891.13,876.79,Still Admitted,No,91,Dr. Torres
+PAT-0376,2024-09-02,2024-09-18,Oncology,Breast Cancer,66,Male,16,65338.48,Government,55537.71,9800.77,Still Admitted,No,85,Dr. Mehta
+PAT-0377,2024-12-25,2025-01-12,Maternity,Gestational Diabetes,45,Male,18,23806.11,Government,20235.19,3570.92,Still Admitted,No,62,Dr. Torres
+PAT-0378,2024-03-30,2024-04-02,Neurology,Parkinson's,47,Female,3,79872.32,Government,67891.47,11980.85,Transferred,No,63,Dr. Okonkwo
+PAT-0379,2024-02-27,2024-03-09,Pediatrics,Appendicitis,87,Female,11,24327.88,Government,20678.7,3649.18,Transferred,No,67,Dr. Kim
+PAT-0380,2024-04-19,2024-04-20,Emergency,Trauma,81,Female,1,54384.91,Medicare,40788.68,13596.23,Deceased,No,92,Dr. Rosenberg
+PAT-0381,2024-07-01,2024-07-02,Cardiology,Coronary Artery Disease,79,Male,1,44165.34,Medicaid,39748.81,4416.53,Transferred,No,60,Dr. Patel
+PAT-0382,2024-02-21,2024-03-06,Cardiology,Hypertension,63,Male,14,19408.69,Government,16497.39,2911.3,Transferred,No,69,Dr. Mehta
+PAT-0383,2024-12-02,2024-12-11,Oncology,Lung Cancer,29,Female,9,45139.82,Medicaid,40625.84,4513.98,Discharged,No,87,Dr. Rosenberg
+PAT-0384,2024-03-23,2024-03-28,General Surgery,Appendectomy,46,Male,5,71175.98,Private,56940.78,14235.2,Discharged,No,72,Dr. Mehta
+PAT-0385,2024-07-21,2024-08-04,Oncology,Colorectal Cancer,43,Male,14,85673.99,Medicare,64255.49,21418.5,Transferred,No,90,Dr. Rosenberg
+PAT-0386,2024-09-10,2024-09-15,ICU,Respiratory Failure,42,Male,5,71552.67,Self-Pay,0.0,71552.67,Discharged,No,84,Dr. Mehta
+PAT-0387,2024-03-20,2024-04-01,Oncology,Lymphoma,65,Male,12,2085.73,Medicare,1564.3,521.43,Transferred,Yes,81,Dr. Rosenberg
+PAT-0388,2024-05-24,2024-06-09,Emergency,Chest Pain,11,Male,16,72476.77,Medicare,54357.58,18119.19,Discharged,No,92,Dr. Williams
+PAT-0389,2024-12-24,2025-01-01,Emergency,Chest Pain,86,Male,8,78101.41,Medicare,58576.06,19525.35,Deceased,No,66,Dr. Okonkwo
+PAT-0390,2024-03-02,2024-03-07,Neurology,Stroke,52,Male,5,4414.12,Medicare,3310.59,1103.53,Discharged,No,87,Dr. Mehta
+PAT-0391,2024-07-27,2024-08-13,Maternity,Gestational Diabetes,40,Male,17,66754.96,Medicare,50066.22,16688.74,Deceased,No,87,Dr. Nguyen
+PAT-0392,2024-06-04,2024-06-08,Cardiology,Coronary Artery Disease,35,Male,4,35048.87,Medicaid,31543.98,3504.89,Discharged,No,75,Dr. Mehta
+PAT-0393,2024-01-27,2024-02-07,Cardiology,Hypertension,28,Male,11,27676.86,Medicaid,24909.17,2767.69,Discharged,No,66,Dr. Rosenberg
+PAT-0394,2024-06-20,2024-06-30,Pediatrics,Appendicitis,15,Female,10,9926.78,Private,7941.42,1985.36,Still Admitted,No,68,Dr. Patel
+PAT-0395,2024-09-27,2024-09-27,Outpatient,Routine Checkup,78,Male,0,35803.99,Medicaid,32223.59,3580.4,Discharged,No,84,Dr. Hassan
+PAT-0396,2024-01-22,2024-02-10,Orthopedics,Fracture,84,Female,19,77799.94,Medicare,58349.96,19449.98,Discharged,No,66,Dr. Rosenberg
+PAT-0397,2024-09-30,2024-10-05,Neurology,Migraine,6,Female,5,12841.77,Self-Pay,0.0,12841.77,Transferred,No,76,Dr. Williams
+PAT-0398,2024-02-04,2024-02-20,Maternity,Preeclampsia,54,Male,16,50138.45,Government,42617.68,7520.77,Discharged,No,70,Dr. Mehta
+PAT-0399,2024-02-01,2024-02-01,Outpatient,Routine Checkup,89,Male,0,18715.98,Self-Pay,0.0,18715.98,Transferred,No,94,Dr. Torres
+PAT-0400,2024-10-14,2024-10-27,Maternity,C-Section,52,Male,13,57999.97,Medicare,43499.98,14499.99,Deceased,No,70,Dr. Rosenberg
+PAT-0401,2024-12-28,2025-01-14,ICU,Septic Shock,34,Male,17,29381.24,Medicare,22035.93,7345.31,Discharged,No,77,Dr. Mehta
+PAT-0402,2024-05-01,2024-05-11,ICU,Septic Shock,6,Male,10,61051.77,Medicaid,54946.59,6105.18,Discharged,No,77,Dr. Torres
+PAT-0403,2024-01-01,2024-01-22,Orthopedics,Spinal Stenosis,45,Male,21,60398.73,Medicaid,54358.86,6039.87,Transferred,No,95,Dr. Hassan
+PAT-0404,2024-06-15,2024-06-17,Emergency,Chest Pain,81,Female,2,77659.87,Medicaid,69893.88,7765.99,Discharged,No,77,Dr. Torres
+PAT-0405,2024-02-24,2024-02-24,Outpatient,Vaccination,89,Female,0,36782.61,Medicaid,33104.35,3678.26,Discharged,No,100,Dr. Patel
+PAT-0406,2024-04-14,2024-05-03,Emergency,Respiratory Distress,81,Female,19,76888.44,Self-Pay,0.0,76888.44,Discharged,No,74,Dr. Rosenberg
+PAT-0407,2024-09-10,2024-09-16,Orthopedics,Knee Replacement,59,Female,6,18229.64,Medicare,13672.23,4557.41,Discharged,No,91,Dr. Kim
+PAT-0408,2024-03-31,2024-04-13,Oncology,Lung Cancer,88,Female,13,58056.84,Private,46445.47,11611.37,Still Admitted,No,87,Dr. Nguyen
+PAT-0409,2024-09-26,2024-10-01,Orthopedics,Fracture,2,Male,5,57630.25,Self-Pay,0.0,57630.25,Discharged,No,67,Dr. Santos
+PAT-0410,2024-05-17,2024-05-22,Orthopedics,Spinal Stenosis,81,Male,5,57285.82,Private,45828.66,11457.16,Discharged,No,66,Dr. Okonkwo
+PAT-0411,2024-10-15,2024-10-30,General Surgery,Hernia Repair,21,Male,15,29755.67,Self-Pay,0.0,29755.67,Discharged,No,63,Dr. Mehta
+PAT-0412,2024-10-05,2024-10-15,Orthopedics,Fracture,14,Male,10,48987.3,Self-Pay,0.0,48987.3,Transferred,No,74,Dr. Nguyen
+PAT-0413,2024-06-29,2024-07-20,Oncology,Lymphoma,37,Male,21,22078.31,Self-Pay,0.0,22078.31,Discharged,No,67,Dr. Santos
+PAT-0414,2024-05-24,2024-06-05,Orthopedics,Fracture,10,Male,12,58798.64,Private,47038.91,11759.73,Discharged,No,65,Dr. Nguyen
+PAT-0415,2024-06-20,2024-07-10,ICU,Post-Op Monitoring,24,Female,20,64802.62,Medicare,48601.97,16200.65,Discharged,No,79,Dr. Kim
+PAT-0416,2024-12-04,2024-12-16,General Surgery,Cholecystectomy,34,Female,12,77169.77,Private,61735.82,15433.95,Discharged,No,69,Dr. Nguyen
+PAT-0417,2024-09-01,2024-09-04,General Surgery,Cholecystectomy,15,Male,3,55232.8,Medicaid,49709.52,5523.28,Transferred,No,80,Dr. Patel
+PAT-0418,2024-09-10,2024-09-24,Pediatrics,Appendicitis,62,Male,14,66120.24,Self-Pay,0.0,66120.24,Still Admitted,No,100,Dr. Santos
+PAT-0419,2024-08-02,2024-08-20,Maternity,Gestational Diabetes,64,Male,18,51549.99,Self-Pay,0.0,51549.99,Deceased,No,74,Dr. Nguyen
+PAT-0420,2024-10-22,2024-10-30,ICU,Post-Op Monitoring,90,Female,8,9018.97,Medicaid,8117.07,901.9,Discharged,Yes,61,Dr. Williams
+PAT-0421,2024-06-27,2024-07-09,Cardiology,Hypertension,18,Male,12,28560.48,Medicare,21420.36,7140.12,Discharged,No,95,Dr. Santos
+PAT-0422,2024-03-11,2024-03-15,Cardiology,Coronary Artery Disease,90,Male,4,67113.3,Self-Pay,0.0,67113.3,Still Admitted,No,87,Dr. Williams
+PAT-0423,2024-02-07,2024-02-07,Outpatient,Vaccination,62,Male,0,79686.58,Medicare,59764.93,19921.65,Discharged,Yes,83,Dr. Williams
+PAT-0424,2024-10-18,2024-11-01,Cardiology,Coronary Artery Disease,20,Female,14,72902.35,Self-Pay,0.0,72902.35,Transferred,No,93,Dr. Patel
+PAT-0425,2024-11-26,2024-11-27,General Surgery,Cholecystectomy,37,Male,1,11281.32,Private,9025.06,2256.26,Discharged,No,62,Dr. Nguyen
+PAT-0426,2024-12-14,2024-12-29,Maternity,Preeclampsia,71,Male,15,67814.52,Medicaid,61033.07,6781.45,Transferred,No,92,Dr. Okonkwo
+PAT-0427,2024-02-17,2024-03-05,Emergency,Trauma,49,Male,17,92920.66,Medicare,69690.49,23230.17,Transferred,No,85,Dr. Okonkwo
+PAT-0428,2024-11-05,2024-11-08,ICU,Multi-Organ Failure,89,Male,3,44926.68,Medicaid,40434.01,4492.67,Discharged,No,85,Dr. Patel
+PAT-0429,2024-04-09,2024-04-18,Maternity,Normal Delivery,14,Male,9,10634.49,Medicaid,9571.04,1063.45,Discharged,No,81,Dr. Okonkwo
+PAT-0430,2024-02-24,2024-02-27,ICU,Septic Shock,28,Male,3,57047.83,Medicaid,51343.05,5704.78,Discharged,No,72,Dr. Williams
+PAT-0431,2024-10-16,2024-10-16,Outpatient,Routine Checkup,6,Female,0,53904.24,Self-Pay,0.0,53904.24,Discharged,Yes,80,Dr. Patel
+PAT-0432,2024-07-22,2024-08-08,Emergency,Trauma,25,Female,17,30423.3,Self-Pay,0.0,30423.3,Transferred,No,68,Dr. Torres
+PAT-0433,2024-09-14,2024-09-19,Orthopedics,Spinal Stenosis,4,Male,5,56111.93,Self-Pay,0.0,56111.93,Discharged,No,62,Dr. Rosenberg
+PAT-0434,2024-11-16,2024-11-19,Orthopedics,Spinal Stenosis,30,Female,3,84110.67,Medicare,63083.0,21027.67,Discharged,No,70,Dr. Patel
+PAT-0435,2024-07-03,2024-07-23,Emergency,Trauma,56,Male,20,4569.22,Self-Pay,0.0,4569.22,Deceased,No,99,Dr. Rosenberg
+PAT-0436,2024-01-08,2024-01-13,Orthopedics,Spinal Stenosis,40,Male,5,52340.22,Private,41872.18,10468.04,Discharged,No,89,Dr. Okonkwo
+PAT-0437,2024-05-23,2024-06-11,Orthopedics,Spinal Stenosis,47,Female,19,34087.31,Private,27269.85,6817.46,Discharged,No,89,Dr. Rosenberg
+PAT-0438,2024-03-04,2024-03-23,Oncology,Lung Cancer,63,Female,19,4529.63,Medicaid,4076.67,452.96,Discharged,No,99,Dr. Torres
+PAT-0439,2024-06-09,2024-06-09,Outpatient,Routine Checkup,48,Male,0,8664.81,Self-Pay,0.0,8664.81,Still Admitted,No,76,Dr. Santos
+PAT-0440,2024-01-05,2024-01-10,ICU,Respiratory Failure,14,Female,5,28180.23,Medicare,21135.17,7045.06,Transferred,No,64,Dr. Williams
+PAT-0441,2024-08-26,2024-09-10,Pediatrics,Pneumonia,83,Female,15,51207.9,Self-Pay,0.0,51207.9,Transferred,No,71,Dr. Santos
+PAT-0442,2024-06-17,2024-06-20,Maternity,Normal Delivery,41,Female,3,33056.3,Government,28097.86,4958.44,Transferred,No,90,Dr. Mehta
+PAT-0443,2024-03-20,2024-04-05,ICU,Multi-Organ Failure,19,Male,16,61108.38,Medicaid,54997.54,6110.84,Discharged,No,98,Dr. Nguyen
+PAT-0444,2024-04-19,2024-04-21,General Surgery,Cholecystectomy,28,Male,2,82567.54,Self-Pay,0.0,82567.54,Discharged,No,100,Dr. Williams
+PAT-0445,2024-07-26,2024-07-29,Emergency,Chest Pain,39,Female,3,83109.69,Self-Pay,0.0,83109.69,Discharged,No,93,Dr. Mehta
+PAT-0446,2024-08-07,2024-08-18,Orthopedics,Arthritis,39,Male,11,16299.04,Medicaid,14669.14,1629.9,Still Admitted,No,90,Dr. Nguyen
+PAT-0447,2024-12-20,2025-01-08,Pediatrics,Asthma,50,Male,19,78328.08,Government,66578.87,11749.21,Still Admitted,No,98,Dr. Hassan
+PAT-0448,2024-03-15,2024-03-15,Outpatient,Vaccination,42,Female,0,63354.73,Medicaid,57019.26,6335.47,Discharged,Yes,89,Dr. Williams
+PAT-0449,2024-05-14,2024-05-31,Maternity,Normal Delivery,1,Male,17,93892.08,Medicare,70419.06,23473.02,Discharged,No,100,Dr. Santos
+PAT-0450,2024-12-22,2025-01-09,Maternity,Normal Delivery,22,Female,18,57408.86,Medicare,43056.65,14352.21,Discharged,No,72,Dr. Mehta
+PAT-0451,2024-06-06,2024-06-23,Emergency,Acute Abdomen,16,Female,17,66675.68,Self-Pay,0.0,66675.68,Deceased,No,82,Dr. Patel
+PAT-0452,2024-03-31,2024-04-15,Orthopedics,Arthritis,55,Female,15,35948.04,Government,30555.83,5392.21,Discharged,No,94,Dr. Nguyen
+PAT-0453,2024-12-25,2025-01-14,Emergency,Respiratory Distress,13,Male,20,94563.22,Private,75650.58,18912.64,Transferred,No,61,Dr. Hassan
+PAT-0454,2024-02-21,2024-03-13,ICU,Respiratory Failure,57,Male,21,48216.66,Private,38573.33,9643.33,Transferred,No,86,Dr. Torres
+PAT-0455,2024-02-28,2024-03-06,Maternity,Gestational Diabetes,61,Female,7,90341.95,Medicaid,81307.76,9034.19,Discharged,No,89,Dr. Patel
+PAT-0456,2024-09-16,2024-09-26,Neurology,Epilepsy,35,Male,10,83658.99,Medicaid,75293.09,8365.9,Transferred,No,86,Dr. Mehta
+PAT-0457,2024-01-14,2024-01-19,Cardiology,Coronary Artery Disease,48,Female,5,80000.5,Government,68000.43,12000.07,Discharged,No,98,Dr. Hassan
+PAT-0458,2024-05-03,2024-05-21,Maternity,Gestational Diabetes,51,Male,18,18948.61,Self-Pay,0.0,18948.61,Still Admitted,No,96,Dr. Nguyen
+PAT-0459,2024-07-25,2024-08-05,Oncology,Breast Cancer,67,Female,11,15725.39,Medicare,11794.04,3931.35,Still Admitted,No,68,Dr. Kim
+PAT-0460,2024-03-22,2024-04-02,ICU,Respiratory Failure,27,Male,11,9584.57,Private,7667.66,1916.91,Deceased,No,100,Dr. Torres
+PAT-0461,2024-10-19,2024-11-01,Orthopedics,Spinal Stenosis,4,Male,13,70728.39,Medicare,53046.29,17682.1,Discharged,No,100,Dr. Santos
+PAT-0462,2024-04-09,2024-04-27,Emergency,Acute Abdomen,32,Male,18,69218.65,Self-Pay,0.0,69218.65,Discharged,No,63,Dr. Mehta
+PAT-0463,2024-02-22,2024-02-22,Outpatient,Follow-Up,15,Female,0,44049.83,Government,37442.36,6607.47,Discharged,No,69,Dr. Williams
+PAT-0464,2024-09-10,2024-09-22,Orthopedics,Fracture,27,Female,12,37613.38,Self-Pay,0.0,37613.38,Still Admitted,No,86,Dr. Williams
+PAT-0465,2024-12-17,2024-12-31,Neurology,Migraine,49,Male,14,84611.01,Self-Pay,0.0,84611.01,Discharged,No,71,Dr. Hassan
+PAT-0466,2024-01-17,2024-01-17,Outpatient,Routine Checkup,16,Male,0,92731.28,Medicaid,83458.15,9273.13,Deceased,No,99,Dr. Kim
+PAT-0467,2024-04-08,2024-04-28,Orthopedics,Knee Replacement,4,Female,20,51286.88,Government,43593.85,7693.03,Discharged,No,69,Dr. Santos
+PAT-0468,2024-06-16,2024-06-21,Cardiology,Arrhythmia,29,Male,5,8660.31,Medicare,6495.23,2165.08,Discharged,No,90,Dr. Torres
+PAT-0469,2024-08-27,2024-09-12,Emergency,Chest Pain,56,Male,16,49092.25,Self-Pay,0.0,49092.25,Still Admitted,No,76,Dr. Kim
+PAT-0470,2024-02-22,2024-03-12,Maternity,Gestational Diabetes,76,Female,19,30151.32,Medicare,22613.49,7537.83,Transferred,No,91,Dr. Hassan
+PAT-0471,2024-06-12,2024-07-02,Emergency,Acute Abdomen,14,Male,20,58007.25,Self-Pay,0.0,58007.25,Transferred,No,82,Dr. Okonkwo
+PAT-0472,2024-09-18,2024-09-27,Cardiology,Coronary Artery Disease,76,Female,9,39403.94,Government,33493.35,5910.59,Discharged,No,93,Dr. Williams
+PAT-0473,2024-06-14,2024-06-28,Oncology,Colorectal Cancer,24,Male,14,34499.53,Private,27599.62,6899.91,Discharged,No,83,Dr. Williams
+PAT-0474,2024-06-12,2024-06-13,Cardiology,Heart Failure,43,Female,1,20937.36,Government,17796.76,3140.6,Discharged,No,74,Dr. Hassan
+PAT-0475,2024-09-26,2024-10-03,Neurology,Parkinson's,14,Female,7,53642.31,Government,45595.96,8046.35,Discharged,No,64,Dr. Patel
+PAT-0476,2024-04-10,2024-04-12,Neurology,Parkinson's,64,Male,2,47772.92,Medicaid,42995.63,4777.29,Deceased,No,67,Dr. Patel
+PAT-0477,2024-07-15,2024-07-15,Outpatient,Routine Checkup,31,Female,0,55098.18,Medicaid,49588.36,5509.82,Discharged,Yes,96,Dr. Okonkwo
+PAT-0478,2024-01-19,2024-02-06,Maternity,Gestational Diabetes,68,Female,18,4485.13,Private,3588.1,897.03,Discharged,Yes,66,Dr. Patel
+PAT-0479,2024-07-23,2024-07-26,Pediatrics,Appendicitis,72,Female,3,73768.59,Self-Pay,0.0,73768.59,Transferred,No,85,Dr. Williams
+PAT-0480,2024-11-12,2024-11-16,Pediatrics,Fever NOS,4,Male,4,21902.15,Private,17521.72,4380.43,Discharged,No,80,Dr. Williams
+PAT-0481,2024-07-07,2024-07-25,Neurology,Stroke,1,Male,18,88793.2,Private,71034.56,17758.64,Discharged,No,62,Dr. Williams
+PAT-0482,2024-06-17,2024-07-07,Emergency,Respiratory Distress,49,Male,20,26225.72,Medicare,19669.29,6556.43,Discharged,No,97,Dr. Patel
+PAT-0483,2024-10-26,2024-11-09,Oncology,Lymphoma,82,Female,14,42886.65,Private,34309.32,8577.33,Discharged,No,75,Dr. Patel
+PAT-0484,2024-04-25,2024-04-28,General Surgery,Cholecystectomy,34,Male,3,72976.23,Private,58380.98,14595.25,Discharged,No,75,Dr. Rosenberg
+PAT-0485,2024-04-18,2024-04-19,Cardiology,Coronary Artery Disease,86,Male,1,21159.96,Self-Pay,0.0,21159.96,Deceased,No,66,Dr. Torres
+PAT-0486,2024-06-09,2024-06-19,ICU,Respiratory Failure,59,Female,10,62528.26,Government,53149.02,9379.24,Transferred,No,68,Dr. Rosenberg
+PAT-0487,2024-09-19,2024-09-19,Outpatient,Vaccination,26,Female,0,74277.98,Medicare,55708.49,18569.49,Deceased,Yes,87,Dr. Williams
+PAT-0488,2024-08-24,2024-08-28,Oncology,Lymphoma,15,Female,4,23460.98,Self-Pay,0.0,23460.98,Discharged,No,61,Dr. Kim
+PAT-0489,2024-10-08,2024-10-11,Orthopedics,Spinal Stenosis,46,Male,3,41444.82,Medicare,31083.61,10361.21,Transferred,No,87,Dr. Kim
+PAT-0490,2024-02-20,2024-02-22,Pediatrics,Fever NOS,84,Male,2,36833.62,Self-Pay,0.0,36833.62,Deceased,No,72,Dr. Kim
+PAT-0491,2024-11-07,2024-11-23,ICU,Respiratory Failure,67,Male,16,41641.86,Private,33313.49,8328.37,Discharged,No,67,Dr. Mehta
+PAT-0492,2024-05-16,2024-05-16,Outpatient,Minor Procedure,31,Female,0,7002.82,Private,5602.26,1400.56,Transferred,No,99,Dr. Williams
+PAT-0493,2024-12-20,2024-12-29,Neurology,Migraine,64,Male,9,20177.45,Medicare,15133.09,5044.36,Discharged,No,78,Dr. Okonkwo
+PAT-0494,2024-12-24,2025-01-13,ICU,Respiratory Failure,62,Male,20,70422.35,Medicare,52816.76,17605.59,Discharged,No,64,Dr. Rosenberg
+PAT-0495,2024-01-07,2024-01-23,Oncology,Lung Cancer,55,Male,16,32267.9,Medicare,24200.93,8066.97,Deceased,No,64,Dr. Patel
+PAT-0496,2024-10-25,2024-10-26,General Surgery,Hernia Repair,63,Male,1,83057.19,Self-Pay,0.0,83057.19,Deceased,No,61,Dr. Torres
+PAT-0497,2024-03-16,2024-03-20,Oncology,Colorectal Cancer,13,Female,4,29493.53,Medicaid,26544.18,2949.35,Discharged,No,82,Dr. Patel
+PAT-0498,2024-01-07,2024-01-19,General Surgery,Bowel Resection,39,Male,12,67696.8,Government,57542.28,10154.52,Discharged,No,98,Dr. Torres
+PAT-0499,2024-03-16,2024-03-30,Cardiology,Arrhythmia,29,Female,14,62912.36,Medicare,47184.27,15728.09,Discharged,No,61,Dr. Santos
+PAT-0500,2024-04-09,2024-04-22,Orthopedics,Arthritis,82,Male,13,10967.16,Medicaid,9870.44,1096.72,Discharged,No,94,Dr. Patel

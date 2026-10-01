@@ -1,0 +1,27 @@
+City Hospital — Department Performance Report 2024
+
+Department,Patients Treated,Avg Stay (Days),Revenue (USD),Operating Cost (USD),Satisfaction Score (/100),Staff Count,Bed Count
+Cardiology,2840,5.2,9100000,6800000,91,48,62
+Orthopedics,2110,3.8,7400000,5200000,88,36,44
+Oncology,1650,7.1,12300000,9800000,85,54,58
+Neurology,1320,6.4,8600000,6900000,83,40,50
+Emergency,5900,1.2,6200000,5100000,79,72,30
+Pediatrics,3200,2.9,4800000,3600000,94,42,55
+Maternity,1880,3.5,5300000,3900000,96,38,48
+General Surgery,2460,4.1,8900000,6500000,87,44,52
+ICU,420,6.8,11200000,9600000,82,60,35
+Outpatient Clinic,8400,0.5,3100000,2200000,89,55,0
+
+Hospital-Wide Summary,Value,Unit
+Total Patients,30180,annual
+Total Revenue,76900000,USD
+Total Operating Cost,59600000,USD
+Net Operating Income,17300000,USD
+Operating Margin,22.5,Percent
+Average Patient Satisfaction,87.4,out of 100
+Total Staff,489,headcount
+Total Beds,434,inpatient
+Overall Bed Occupancy Rate,81,Percent
+Average Length of Stay,4.15,Days
+30-Day Readmission Rate,6.2,Percent
+Annual Budget,80000000,USD
