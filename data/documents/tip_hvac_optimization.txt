@@ -1,0 +1,60 @@
+TOPIC: HVAC Optimization Strategies for Smart Homes
+SOURCE: EcoHome Knowledge Base — HVAC Optimization
+
+HVAC systems (heating, ventilation, and air conditioning) are the single largest energy consumer in most
+homes, accounting for 40–50% of total electricity use. Optimizing HVAC can yield the largest savings of
+any home improvement measure.
+
+PRE-CONDITIONING STRATEGY
+Pre-cool or pre-heat your home before peak electricity pricing begins (typically 5 PM). Start cooling
+at 3–4 PM when solar generation is still high and rates are lower. This "thermal mass" strategy stores
+coolness in walls, furniture, and floors. After 5 PM, raise the thermostat 2–3°F — the home stays
+comfortable for 1–2 hours without active cooling.
+Savings: $80–150/year in hot climates.
+
+ZONING AND OCCUPANCY-BASED CONTROL
+Modern smart thermostats (Ecobee, Nest) with room sensors adjust temperature based on where people are,
+not just the hallway where the thermostat is located. Unused rooms can be closed off (in duct systems)
+or set to wider temperature bands. Multi-zone systems with individual room control can save 20–30%.
+
+HEAT PUMP TECHNOLOGY
+Heat pumps are 3–4x more efficient than resistance heaters. A heat pump delivers 3 kWh of heat for
+every 1 kWh of electricity consumed (COP of 3). At $0.15/kWh average rate:
+- Resistance heater: 1 kWh → 1 kWh heat → $0.15/kWh of heat
+- Heat pump: 1 kWh → 3 kWh heat → $0.05/kWh of heat
+Annual savings switching from electric resistance to heat pump: $600–1,200 for average home.
+
+HUMIDITY MANAGEMENT
+Maintaining 40–50% indoor humidity makes occupants feel comfortable at higher summer temperatures
+(2–3°F warmer setpoint possible). Dehumidifiers in humid climates can reduce "feels like" temperature,
+allowing the thermostat to be raised. Each 1°F raise saves ~1% on cooling costs.
+
+ECONOMIZER / NIGHT FLUSH
+On mild-temperature nights (55–70°F outside), open windows and use whole-house fans to flush hot air
+and pre-cool with free outdoor air. A whole-house fan uses 300–600W versus 3,000–5,000W for central AC.
+Potential savings: 50–75% reduction in cooling energy on moderate nights.
+
+DUCT LEAKAGE
+Typical homes lose 20–30% of conditioned air through duct leaks. Sealing ducts with mastic sealant or
+metal tape (not duct tape, which fails) can reduce HVAC energy by 15–20%. Focus on ducts in unconditioned
+spaces (attic, crawl space, garage). Professional duct testing (blower door) costs $200–400; savings
+recoup this in 1–2 years.
+
+SOLAR + HVAC INTEGRATION
+Use a solar-aware thermostat schedule:
+- High solar production (10 AM–3 PM): Pre-cool aggressively while using free solar power.
+- Low solar (after 3 PM): Let temperature drift up slightly to shed load.
+- Peak pricing (5–9 PM): Rely on pre-cooled thermal mass; minimal HVAC operation.
+- Battery storage available: Charge battery during solar peak; power HVAC from battery during peak hours.
+
+HEAT PUMP WATER HEATER SYNERGY
+Heat pump water heaters (HPWH) pull heat from indoor air — cooling it slightly. In summer, this provides
+free supplemental air cooling while heating water. Run HPWH during solar peak hours for maximum solar
+self-consumption and incidental cooling benefit.
+
+MAINTENANCE SCHEDULE
+- Monthly: Replace/check air filter (MERV 8–11 recommended)
+- Quarterly: Check refrigerant sight glass; clear outdoor unit debris
+- Annually: Professional tune-up ($80–150) — includes coil cleaning, refrigerant check, electrical inspection
+  Returns 5–10% efficiency improvement
+- Every 10–15 years: Evaluate system replacement (modern systems are 30–40% more efficient than pre-2010 units)

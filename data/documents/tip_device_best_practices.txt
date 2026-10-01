@@ -1,0 +1,53 @@
+TOPIC: Smart Device Best Practices for Energy Optimization
+SOURCE: EcoHome Knowledge Base — Device Best Practices
+
+ELECTRIC VEHICLE (EV) CHARGING
+- Charge during super off-peak hours (11 PM – 6 AM) for lowest cost: $0.07–0.11/kWh vs $0.28–0.38/kWh peak.
+- On sunny days, use solar smart charging between 10 AM – 3 PM to charge with free solar energy.
+- Use the vehicle's built-in scheduler or a smart EVSE (like ChargePoint or JuiceBox) to automate off-peak charging.
+- A typical EV needs 30–40 kWh for a full charge. At $0.09 off-peak vs $0.32 peak: $2.70 vs $9.60 per full charge.
+  Annual savings for daily charging: ~$2,500/year by shifting to off-peak.
+- Keep the battery between 20–80% state of charge for longevity (avoid 100% unless needed for long trips).
+- Pre-condition the cabin while plugged in (not on battery) in extreme weather.
+
+POOL PUMP SCHEDULING
+- Pool pumps are typically 1–2 kW and should run 6–8 hours daily.
+- Run during midday solar hours (10 AM – 4 PM) to use solar power directly.
+- Use a variable-speed pump — they consume 50–80% less energy than single-speed pumps.
+  Payback period: 1–2 years. Annual savings: $400–600.
+- In winter or low-swim-season, reduce run time to 4 hours/day — water clears more slowly but saves significantly.
+- Never run during peak pricing hours (5–9 PM weekdays) unless chemical balance requires it.
+
+DISHWASHER BEST PRACTICES
+- Run only full loads — a full dishwasher is more efficient than hand washing 6+ place settings.
+- Use the "air-dry" or "heat boost off" setting — the drying element uses 1 kWh per cycle.
+  With air-dry, save $25–35/year.
+- Schedule using built-in delay-start to run at night (super off-peak).
+- Modern dishwashers use 3–5 gallons per cycle vs 20+ gallons for hand-washing.
+
+WASHING MACHINE & DRYER
+- Use cold-water wash exclusively — 90% of washer energy goes to heating water.
+- Wait for a full load or use the load-sensing fill feature.
+- Use high-spin speed to extract more water — reduces dryer time by 15–20%.
+- Dryer: clean lint filter every cycle; vent check annually; moisture sensors stop when clothes are dry.
+  Avoid over-drying, which wastes 10–15% of energy.
+
+SMART HVAC OPERATION
+- Set fan to "auto" not "on" — continuous fan operation uses 500 kWh/year.
+- Seal air leaks around doors and windows before running HVAC aggressively.
+- Use ceiling fans in summer (counterclockwise) to feel 4°F cooler — can raise thermostat setpoint and save 10%.
+- Replace HVAC filters monthly in high-use seasons; dirty filters increase energy use by 5–15%.
+- Annual HVAC tune-up improves efficiency by 5–10% and extends equipment life.
+
+SOLAR INVERTER AND MONITORING
+- Use your inverter's monitoring app to track real-time generation vs consumption.
+- Enable "self-consumption" or "home mode" on hybrid inverters to prioritize solar before grid.
+- Clean panels 2–4 times/year (dust, pollen, bird droppings reduce output by 5–25%).
+- Check for shading issues seasonally — nearby trees grow and can reduce winter solar generation significantly.
+- String inverters lose output if one panel is shaded; microinverters or DC optimizers mitigate this.
+
+SMART HOME AUTOMATION
+- Create energy routines: "When everyone leaves, set thermostat to eco mode and turn off non-essential devices."
+- Integrate solar production with device automation: run high-load appliances automatically when solar exceeds 3 kW.
+- Use geofencing to pre-condition home 30 minutes before arrival using off-peak energy.
+- Smart plugs with energy monitoring identify energy hogs; eliminate or schedule them.

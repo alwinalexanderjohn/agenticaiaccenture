@@ -1,0 +1,73 @@
+TOPIC: Renewable Energy Integration for Smart Homes
+SOURCE: EcoHome Knowledge Base — Renewable Energy Integration
+
+Integrating solar panels, battery storage, and smart controls creates a home energy ecosystem that can
+achieve 80–100% renewable energy self-sufficiency while reducing or eliminating electricity bills.
+
+SOLAR PANEL SYSTEM SIZING
+Right-size your solar system to your consumption:
+- Calculate annual kWh usage from utility bills
+- Divide by 1,200–1,400 (annual kWh per kW of solar in most US regions) to get system kW needed
+- Example: 12,000 kWh/year ÷ 1,300 = ~9.2 kW system
+- Add 10–20% for EV adoption or electrification plans
+- Net metering: Size to ~100% of consumption to maximize bill offset
+- Without net metering: Size to match daytime consumption + battery charging; oversizing exports at
+  low value
+
+SOLAR PANEL TYPES AND PERFORMANCE
+- Monocrystalline panels (22–24% efficiency): Best for limited roof space; highest cost
+- Polycrystalline panels (17–20% efficiency): Lower cost; slightly larger footprint
+- Bifacial panels: Capture reflected light from roof surface; +5–10% production
+- Panel degradation: ~0.5%/year; expect 90% output after 20 years
+- High temperature reduces efficiency: panels lose ~0.4%/°C above 25°C (NOOC rated)
+  At 45°C roof temp, expect 8% output reduction vs nameplate
+
+BATTERY STORAGE INTEGRATION
+Home batteries provide several value streams simultaneously:
+1. Solar self-consumption: Store excess midday solar for evening use; saves grid import at peak rates
+2. Time-of-use arbitrage: Charge at $0.09 (off-peak), discharge at $0.32 (peak) → $0.23/kWh spread
+3. Backup power: Whole-home or critical-load backup during outages
+4. Grid services: Participate in virtual power plant programs (earn $50–200/year)
+5. Demand charge reduction: For commercial/hybrid rate customers
+
+Battery economics (10 kWh usable, 10-year warranty):
+- Cost: $8,000–12,000 installed
+- Annual savings from arbitrage + self-consumption: $600–1,200 depending on rate structure
+- Simple payback: 7–14 years (shorter with incentives)
+- Federal ITC (Investment Tax Credit): 30% of system cost through 2032
+
+NET METERING AND EXPORT COMPENSATION
+Understanding your utility's export policy:
+- Full retail net metering: Best scenario; exports credited at retail rate (~$0.16/kWh)
+- Net billing: Exports credited at avoided cost or wholesale rate (~$0.03–0.08/kWh)
+- No net metering: All solar must be self-consumed or stored; right-size accordingly
+- Export limits: Some utilities cap export at 90–100% of consumption; larger systems may be rejected
+- In states without net metering, pair solar with battery and maximize self-consumption
+
+WIND ENERGY FOR HOMES
+Small residential wind turbines (2–10 kW):
+- Best for rural sites with average wind speeds > 4.5 m/s (10 mph)
+- Urban/suburban: Wind turbulence from buildings reduces output 40–70%; usually not cost-effective
+- Hybrid solar+wind: Wind produces more in winter when solar is lower; good seasonal complementarity
+- Permitting: Check local zoning laws; height restrictions common in residential areas
+
+GRID INTERACTION STRATEGIES
+- Import minimization: Use automation to avoid grid import during peak hours
+- Export optimization: With favorable net metering, maximize solar production (clean panels, microinverters)
+- Islanding capability: With appropriate inverter and permits, operate off-grid during outages
+- Green energy matching: Time EV charging to periods of high grid renewables (track with WattTime API)
+
+INCENTIVES AND FINANCING
+- Federal Investment Tax Credit (ITC): 30% of solar + battery system cost (through 2032)
+- State incentives: Additional 10–30% in California, New York, Massachusetts, and others
+- Utility rebates: Check DSIRE database (dsireusa.org) for local programs
+- PACE financing: On-property-tax financing; no upfront cost; transfers with home sale
+- Solar loans (5–10 year, 3–7% APR): Positive cash flow from Day 1 in most markets
+- PPAs / Leases: $0 down; lower savings but risk-free; check buyout terms before lease
+
+MONITORING AND PERFORMANCE VERIFICATION
+- Install production monitoring at the inverter level (most inverters include this)
+- Compare actual production to PVWatts calculator estimates monthly
+- Investigate any month with >10% underperformance vs estimate
+- Clean panels when production drops >5% without weather explanation
+- Annual professional inspection recommended; check racking, wiring, connectors

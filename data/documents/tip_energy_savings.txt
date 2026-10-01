@@ -1,0 +1,49 @@
+TOPIC: General Energy Savings Tips for Smart Homes
+SOURCE: EcoHome Knowledge Base — Core Energy Savings
+
+1. TIME-OF-USE PRICING STRATEGY
+Run high-energy appliances (dishwasher, washing machine, dryer) during super off-peak hours
+(typically 9 PM – 6 AM on weekdays) to take advantage of electricity rates that can be 60-70%
+cheaper than peak pricing. A dishwasher running at $0.09/kWh costs $0.05 per cycle versus $0.32/kWh
+($0.18 per cycle) during peak hours — saving ~$14/year just for this one appliance.
+
+2. SOLAR SELF-CONSUMPTION MAXIMIZATION
+Schedule energy-intensive tasks during solar peak production hours (10 AM – 3 PM) on clear days.
+A 10 kW solar system typically generates 6–8 kWh during this window on a sunny day. Running the
+pool pump, HVAC pre-cooling, and EV charging simultaneously during this period can eliminate
+$2–4/day in grid electricity costs.
+
+3. PHANTOM LOAD ELIMINATION
+Devices in standby mode (TVs, game consoles, phone chargers, smart speakers) collectively consume
+100–200 kWh/year. Using smart power strips that cut standby power can save $15–30/year. Identify
+top phantom-load devices with a smart plug energy monitor.
+
+4. HOT WATER OPTIMIZATION
+Water heating accounts for 18% of home energy use. Set water heater to 120°F (49°C) — each 10°F
+reduction saves 3–5% on water heating costs. Install a timer to heat water during off-peak hours.
+Consider a heat-pump water heater (3x more efficient) for households with high hot-water use.
+
+5. LIGHTING EFFICIENCY
+Replace remaining incandescent or halogen bulbs with LED equivalents. LEDs use 75% less energy and
+last 25x longer. Installing occupancy sensors in low-traffic areas (garage, laundry, bathrooms) can
+reduce lighting energy by 30–40%. Smart lighting that dims automatically can save an additional 10–15%.
+
+6. REFRIGERATOR OPTIMIZATION
+Refrigerators run 24/7 and account for ~13% of household electricity. Keep the refrigerator at 37–38°F
+and freezer at 0°F. Ensure door seals are tight (test with a dollar bill). Clean condenser coils every
+6 months. Each 10°F too cold costs an extra 25% in energy. A full freezer is more efficient than an
+empty one — fill gaps with water bottles.
+
+7. LAUNDRY BEST PRACTICES
+Wash clothes in cold water (saves ~$30–40/year). Run only full loads. Clean the dryer lint trap every
+load (a clogged filter increases drying time by 30%). Dry consecutive loads to take advantage of residual
+heat. Line-dry when weather permits — eliminating dryer use 2–3 times/week saves $50–75/year.
+
+8. SMART THERMOSTAT SCHEDULING
+A programmable thermostat can save 10–15% on heating and cooling. Set it to:
+- Away mode (2°F wider than comfort) during work hours
+- Pre-cool/pre-heat 30 minutes before returning home using off-peak electricity
+- Sleep setback (2–4°F from comfort) overnight
+- Vacation mode when away 3+ days
+
+Every 1°F of thermostat setback saves approximately 1% on HVAC energy costs.

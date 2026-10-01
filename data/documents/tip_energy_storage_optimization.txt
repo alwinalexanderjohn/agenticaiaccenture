@@ -1,0 +1,92 @@
+TOPIC: Energy Storage Optimization Strategies
+SOURCE: EcoHome Knowledge Base — Energy Storage Optimization
+
+Home battery storage systems (like Tesla Powerwall, Enphase IQ Battery, or Sonnen) dramatically expand
+your ability to shift energy use in time, reduce peak demand charges, and increase solar self-consumption.
+Proper optimization of battery charging and discharging is key to maximizing their value.
+
+BATTERY OPERATING MODES AND WHEN TO USE EACH
+
+1. Self-Consumption Mode (Default Recommended)
+   - Charge: Solar excess during the day
+   - Discharge: Evening/night household loads
+   - Best for: Net-metered customers with 1:1 or near-1:1 export rates
+   - Expected savings: $400–700/year (10 kWh battery, 10 kW solar)
+
+2. Time-of-Use (TOU) Optimization Mode
+   - Charge: Grid during super off-peak ($0.07–0.11/kWh)
+   - Discharge: During peak hours ($0.28–0.38/kWh)
+   - Best for: Customers on TOU rates WITHOUT favorable net metering
+   - Expected savings: $600–1,100/year (10 kWh, $0.23/kWh spread, daily cycling)
+   - Note: Battery cycle life matters — aim for <1 full cycle/day to preserve warranty
+
+3. Backup-First Mode
+   - Maintains 30–100% charge reserved for grid outages
+   - Best for: Areas with frequent outages or critical medical equipment
+   - Trade-off: Reduced energy savings vs pure optimization mode
+   - Recommended: 20–30% backup reserve for most households; 100% reserve only when storms forecast
+
+4. Export Maximization Mode (VPP / Grid Services)
+   - Battery discharges to grid during peak grid stress events
+   - Earn $50–200/year from utility demand response programs
+   - Platforms: Tesla Energy Plan, Sunrun Shift, Sunvault DR, Enphase IQ System Controller DR
+   - Requires smart inverter with grid-export capability and utility agreement
+
+BATTERY STATE OF CHARGE (SOC) MANAGEMENT
+- Optimal daily operating range: 20–90% SOC for longevity
+- Avoid repeated deep discharges (below 10%); degrades lithium cells faster
+- Lithium iron phosphate (LFP) chemistry (Tesla Powerwall 3, some Enphase): Can safely cycle to 100%
+- NMC chemistry (older systems): Avoid 100% SOC for extended periods
+- Temperature sensitivity: Optimal operating range 32–104°F (0–40°C)
+  Below 14°F (-10°C): Charging slows; protect battery in heated space if possible
+
+BATTERY DISPATCH STRATEGY FOR DIFFERENT SCENARIOS
+
+Sunny weekday with EV:
+1. 6–9 AM: Grid charges battery at super off-peak (if TOU mode)
+2. 10 AM–3 PM: Solar charges battery to 90%; excess powers EV charger
+3. 3–5 PM: Solar waning; battery at 90%
+4. 5–9 PM: Battery discharges to power home; no grid import
+5. 9 PM–11 PM: Battery below 20%; small grid import at off-peak rate
+6. 11 PM–6 AM: Grid charges EV at super off-peak; battery rests
+
+Cloudy winter weekday:
+1. 11 PM–6 AM: Grid charges battery to 80% at super off-peak
+2. 6–9 AM: Battery discharges for morning loads (coffee, showers, heating)
+3. 10 AM–3 PM: Low solar (5–15 kWh); battery charges slowly
+4. 5–9 PM: Battery discharges for peak-hour loads
+5. Result: Grid import only during cheapest hours; savings preserved
+
+BATTERY SIZING GUIDANCE
+- Standard household (no EV): 10–13 kWh covers evening loads + backup
+- Household with EV: 13–27 kWh for both home + partial EV charging from battery
+- Whole-home backup (1–2 days): 20–40 kWh depending on critical loads
+- Stack multiple batteries for higher capacity (most systems allow 2–4 units)
+
+Sizing calculation:
+1. Track evening grid import (5 PM–11 PM) for a week
+2. Battery = average evening import × 1.1 (buffer)
+3. Example: Average 8 kWh evening import → 10 kWh battery is sufficient
+
+DEGRADATION AND MAINTENANCE
+- Modern lithium batteries degrade ~2–3%/year under normal use
+- Warranty typically guarantees 70–80% capacity retention after 10 years
+- Avoid: Thermal extremes, regular deep discharges, charging immediately after deep discharge
+- Check: Annual firmware updates via manufacturer app; optimize charge curves
+- Replace: After capacity drops below 70% (or at warranty end, whichever first)
+- Recycling: Battery recycling programs available through manufacturers; do not landfill
+
+FINANCIAL ANALYSIS TEMPLATE
+For a 10 kWh battery system (cost: $10,000 after 30% ITC → $7,000 net):
+- Self-consumption savings: $500/year
+- TOU arbitrage savings: $400/year
+- DR program earnings: $150/year
+- Total annual benefit: $1,050/year
+- Simple payback: 6.7 years
+- 15-year NPV (at 5% discount rate): +$3,800
+
+ROI improves significantly with:
+- Higher TOU rate spread (>$0.20/kWh)
+- More cycles per day (solar + grid charging)
+- Rising electricity rates over time (+3–5%/year typical)
+- Additional incentives (SGIP in California: up to $400/kWh rebate)

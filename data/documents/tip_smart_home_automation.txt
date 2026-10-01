@@ -1,0 +1,65 @@
+TOPIC: Smart Home Automation for Energy Optimization
+SOURCE: EcoHome Knowledge Base — Smart Home Automation
+
+Smart home automation transforms passive energy devices into an intelligent, coordinated energy management
+system. When devices communicate and act on real-time data (solar production, prices, weather), households
+can reduce energy costs by 20–35% without sacrificing comfort.
+
+SOLAR-TRIGGERED AUTOMATIONS
+Create rules that automatically activate high-load devices when solar production exceeds consumption:
+- "When solar export > 2 kW for 10 minutes → Start dishwasher"
+- "When solar export > 3 kW → Enable EV charging at 16A"
+- "When solar forecast is 80%+ for tomorrow → Schedule pool pump for 10 AM"
+- "When battery is full AND solar production > 1 kW → Run washing machine"
+These rules maximize self-consumption and reduce grid export/import.
+
+PRICE-TRIGGERED AUTOMATIONS
+Connect to your utility's real-time or day-ahead price API:
+- "When price drops below $0.12/kWh → Schedule EV charging start"
+- "When peak pricing begins (5 PM) → Set thermostat to 78°F and pause EV charging"
+- "When super off-peak begins (11 PM) → Start water heater boost, resume EV charging"
+- "When price > $0.30/kWh → Send alert, activate demand-response mode"
+
+OCCUPANCY-BASED CONTROL
+Use motion sensors, door sensors, and phone geofencing:
+- Away mode triggers: Eco HVAC setpoint, phantom load shutdown, security system arm
+- Return mode (15 min before arrival): Pre-condition home using off-peak energy
+- Bedtime mode: Reduce lighting to 10%, set sleep thermostat, turn off entertainment devices
+- Morning mode: Gradually increase lighting, pre-heat bathroom, start coffee maker
+
+DEMAND RESPONSE PARTICIPATION
+Many utilities offer demand response (DR) programs:
+- Virtual Power Plant (VPP): Export battery energy to grid during grid stress events; earn $50–200/year
+- AC cycling: Allow utility to cycle AC compressor 15 minutes/hour during peak events; earn $50–150/year
+- EV smart charging: Pause charging during grid events; earn $100–200/year
+Smart thermostats (Nest, Ecobee) and EV chargers (ChargePoint, Wallbox) have built-in utility program support.
+
+WHOLE-HOME ENERGY MONITORING
+Install a whole-home energy monitor (Sense, Emporia Vue, Curb) to:
+- Identify devices in real-time via machine-learning device detection
+- Track per-device energy consumption and cost
+- Set energy budgets and alerts
+- Find phantom loads (devices consuming >5W constantly)
+Monitor installation cost: $200–500; typical savings from behavior change: $150–300/year.
+
+INTEGRATION PLATFORMS
+Recommended platforms for automating multi-device energy optimization:
+- Home Assistant (open-source, local control, 3,000+ integrations): Best for privacy and customization
+- Google Home + Nest Ecosystem: Best for HVAC + solar if using Nest products
+- Apple HomeKit: Best for iOS households; strong privacy guarantees
+- EcoHome App (this platform): AI-optimized scheduling with weather, price, and solar awareness
+
+BATTERY STORAGE AUTOMATION
+If you have a home battery (Tesla Powerwall, Enphase IQ Battery, Sonnen):
+- "Self-consumption mode": Charge from solar; discharge during peak hours
+- "Time-of-use mode": Charge from grid at super off-peak rates; discharge during peak
+- "Backup reserve": Keep 20–30% charge reserved for power outages
+- "Storm watch": Automatically charge to 100% before predicted grid outages
+Optimal battery dispatch can save $500–1,200/year depending on TOU rate differential and battery size.
+
+VOICE + AI INTEGRATION
+Use voice assistants (Alexa, Google Assistant) or AI scheduling (EcoHome AI):
+- "Hey Alexa, what's my solar production today?"
+- "Google, set energy-saving mode for this week"
+- EcoHome AI proactively notifies: "Solar peak in 30 minutes — good time to run pool pump and dishwasher"
+- AI learns patterns: detects when EV arrives home and pre-schedules overnight charging automatically
