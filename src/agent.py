@@ -14,6 +14,7 @@ from src.prompts import (
     get_chat_prompt_template,
     get_intent_classification_prompt,
 )
+from src.retrieval import retriever
 from src.schemas import (
     AnswerResponse,
     CalculationResponse,
@@ -45,6 +46,27 @@ class AgentState(TypedDict):
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
+def _available_docs_hint() -> str:
+    """Return a formatted string listing all documents currently in the store."""
+    docs = retriever.list_documents()
+    lines = [f"  - {d['id']} : {d['title']}" for d in docs]
+    return "Available documents in the store:\n" + "\n".join(lines)
+
+
+def _direct_retrieve(user_input: str) -> list[str]:
+    """Fallback: directly search the retriever when the tool loop retrieved nothing."""
+    results = retriever.search_documents(user_input, top_k=3)
+    if not results:
+        results = [
+            {"id": did, "title": d["title"], "content": d["content"]}
+            for did, d in list(retriever.documents.items())[:2]
+        ]
+    return [
+        f"[Document ID: {r['id']}]\nTitle: {r['title']}\n\n{r['content']}"
+        for r in results
+    ]
+
 
 def _run_tool_loop(llm_with_tools, tool_map: dict, messages: list, max_iter: int = 5):
     """Execute the tool-calling loop and return (updated_messages, tools_used, context_snippets)."""
@@ -129,11 +151,17 @@ def qa_agent(state: AgentState, config: RunnableConfig) -> dict:
     prompt_template = get_chat_prompt_template("qa")
 
     # Phase 1 — gather information via tool-calling loop
-    messages = prompt_template.format_messages(user_input=state["user_input"])
+    # Inject available document IDs so the LLM knows what to retrieve
+    enriched_input = f"{state['user_input']}\n\n[{_available_docs_hint()}]"
+    messages = prompt_template.format_messages(user_input=enriched_input)
     messages, tools_used, context_snippets = _run_tool_loop(llm_with_tools, tool_map, messages)
 
+    # Fallback: if the LLM skipped tool calls, retrieve directly
+    if not context_snippets:
+        context_snippets = _direct_retrieve(state["user_input"])
+
     # Phase 2 — produce a structured AnswerResponse
-    context_str = "\n\n".join(context_snippets) if context_snippets else "No document content was retrieved."
+    context_str = "\n\n".join(context_snippets)
     final_prompt = (
         f"Using the document content below, answer the question with a structured response.\n\n"
         f"Question: {state['user_input']}\n\n"
@@ -164,11 +192,16 @@ def summarization_agent(state: AgentState, config: RunnableConfig) -> dict:
     prompt_template = get_chat_prompt_template("summarization")
 
     # Phase 1 — retrieve document content
-    messages = prompt_template.format_messages(user_input=state["user_input"])
+    enriched_input = f"{state['user_input']}\n\n[{_available_docs_hint()}]"
+    messages = prompt_template.format_messages(user_input=enriched_input)
     messages, tools_used, context_snippets = _run_tool_loop(llm_with_tools, tool_map, messages)
 
+    # Fallback: if the LLM skipped tool calls, retrieve directly
+    if not context_snippets:
+        context_snippets = _direct_retrieve(state["user_input"])
+
     # Phase 2 — produce a structured SummarizationResponse
-    context_str = "\n\n".join(context_snippets) if context_snippets else "No document content was retrieved."
+    context_str = "\n\n".join(context_snippets)
     final_prompt = (
         f"Using the document content below, create a structured summary.\n\n"
         f"Request: {state['user_input']}\n\n"
@@ -199,11 +232,16 @@ def calculation_agent(state: AgentState, config: RunnableConfig) -> dict:
     prompt_template = get_chat_prompt_template("calculation")
 
     # Run a longer tool-calling loop so the model can call document_reader then calculator
-    messages = prompt_template.format_messages(user_input=state["user_input"])
+    enriched_input = f"{state['user_input']}\n\n[{_available_docs_hint()}]"
+    messages = prompt_template.format_messages(user_input=enriched_input)
     messages, tools_used, context_snippets = _run_tool_loop(llm_with_tools, tool_map, messages, max_iter=8)
 
+    # Fallback: if the LLM skipped tool calls, retrieve directly
+    if not context_snippets:
+        context_snippets = _direct_retrieve(state["user_input"])
+
     # Phase 2 — produce a structured CalculationResponse
-    context_str = "\n\n".join(context_snippets) if context_snippets else "No calculation output available."
+    context_str = "\n\n".join(context_snippets)
     final_prompt = (
         f"Based on the document data and calculator output below, provide a structured response.\n\n"
         f"Request: {state['user_input']}\n\n"

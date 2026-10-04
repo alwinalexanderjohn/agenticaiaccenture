@@ -85,26 +85,33 @@ def create_calculator_tool():
 def create_document_reader_tool():
     """Return a LangChain tool that retrieves document content."""
 
+    def _build_doc_list() -> str:
+        docs = retriever.list_documents()
+        return "\n".join(f"  - {d['id']} : {d['title']}" for d in docs)
+
     @tool
     def document_reader(query: str) -> str:
-        """Search and retrieve financial or healthcare document content.
+        """Search and retrieve document content from the available document store.
 
-        Pass a document ID (e.g. "doc_financial_q1") to fetch that exact document,
-        or pass keywords (e.g. "Q2 revenue profit") to find the most relevant documents.
+        Pass a document ID to fetch that exact document, or pass any keywords
+        to find the most relevant documents. ALWAYS call this tool first before
+        answering — never reply without retrieving document content.
 
-        Available document IDs:
-          - doc_financial_q1   : Q1 2024 Financial Report
-          - doc_financial_q2   : Q2 2024 Financial Report
-          - doc_healthcare_stats    : Healthcare Statistics 2024
-          - doc_healthcare_outcomes : Patient Outcomes Report 2024
+        To see which documents are available, pass query="list" and all document
+        IDs and titles will be returned.
 
         Args:
-            query: A document ID or keyword search string.
+            query: A document ID, the word "list", or any keyword search string.
 
         Returns:
-            The full content of the matching document(s).
+            The full content of the matching document(s), or a list of available IDs.
         """
         try:
+            # Return document catalogue when asked
+            if query.strip().lower() in ("list", "list documents", "available documents", ""):
+                doc_list = _build_doc_list()
+                return f"Available documents:\n{doc_list}"
+
             # Try exact ID lookup first
             doc = retriever.get_document(query)
             if doc:
@@ -112,9 +119,15 @@ def create_document_reader_tool():
                 ToolLogger.log("document_reader", query, output[:80])
                 return output
 
-            # Fall back to keyword search
-            results = retriever.search_documents(query)
+            # Fall back to keyword search across ALL documents (including uploads)
+            results = retriever.search_documents(query, top_k=3)
             if not results:
+                # Last resort: return all documents so the LLM has something to work with
+                all_docs = list(retriever.documents.items())
+                if all_docs:
+                    parts = [f"[Document ID: {did}]\nTitle: {d['title']}\n\n{d['content']}"
+                             for did, d in all_docs[:2]]
+                    return "\n\n" + ("=" * 60 + "\n\n").join(parts)
                 return "No documents found matching your query."
 
             parts = []
