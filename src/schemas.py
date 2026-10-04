@@ -1,6 +1,6 @@
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
 from datetime import datetime
-from typing import List
+from typing import List, Literal
 
 
 class AnswerResponse(BaseModel):
@@ -14,7 +14,7 @@ class AnswerResponse(BaseModel):
 
 class UserIntent(BaseModel):
     """Structured schema for intent classification."""
-    intent_type: str = Field(
+    intent_type: Literal["qa", "summarization", "calculation", "unknown"] = Field(
         description='The classified intent: "qa", "summarization", "calculation", or "unknown"'
     )
     confidence: float = Field(ge=0.0, le=1.0, description="Confidence in classification between 0 and 1")

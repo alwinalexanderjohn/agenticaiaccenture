@@ -1,21 +1,35 @@
 import re
 import logging
+import os
+from datetime import datetime
+from pathlib import Path
 from typing import List
 
 from langchain.tools import tool
 
 from src.retrieval import retriever
 
+# ── File-based logging setup ────────────────────────────────────────────────
+_LOGS_DIR = Path("logs")
+_LOGS_DIR.mkdir(exist_ok=True)
+
+_log_file = _LOGS_DIR / f"tool_calls_{datetime.now().strftime('%Y-%m-%d')}.log"
+_file_handler = logging.FileHandler(_log_file, encoding="utf-8")
+_file_handler.setFormatter(logging.Formatter("%(asctime)s  %(levelname)-8s  %(message)s"))
+
 logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
+if not any(isinstance(h, logging.FileHandler) for h in logger.handlers):
+    logger.addHandler(_file_handler)
 
 
 class ToolLogger:
-    """Simple logger for tracking tool invocations."""
+    """Logs every tool invocation to logs/<date>.log and to the Python logger."""
 
     @staticmethod
     def log(tool_name: str, input_data: str, output: str) -> None:
-        logger.info("[Tool: %s] Input: %.120s", tool_name, input_data)
-        logger.info("[Tool: %s] Output: %.120s", tool_name, output)
+        logger.info("[Tool: %s] Input: %.200s", tool_name, input_data)
+        logger.info("[Tool: %s] Output: %.200s", tool_name, output)
 
 
 def create_calculator_tool():
