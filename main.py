@@ -88,6 +88,16 @@ def main():
                 print(f"  You can now ask questions like: \"Summarize {result}\"")
             continue
 
+        # Catch upload-intent phrases without a filepath
+        _upload_hints = ("upload", "load file", "load a file", "i would like to upload",
+                         "how do i upload", "add a file", "add document", "load document")
+        if any(lower == h or lower.startswith(h) for h in _upload_hints):
+            print("\n  To upload a file use:  upload <filepath>")
+            print("  Example:  upload samples\\finance_transactions_500.csv")
+            print("  Supported formats: .pdf  .txt  .md  .csv")
+            print("  After uploading, type  docs  to see all loaded documents.")
+            continue
+
         # ── Send to assistant ──────────────────────────────────────────
         print("\nAssistant: ", end="", flush=True)
         try:

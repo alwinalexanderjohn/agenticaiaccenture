@@ -1,5 +1,9 @@
 import operator
+import os
 from typing import Annotated, Any, List, Optional, TypedDict
+
+# Register Pydantic schemas so InMemorySaver can serialize them without warnings
+os.environ.setdefault("LANGGRAPH_ALLOWED_MSGPACK_MODULES", "src.schemas")
 
 from langchain_core.messages import AIMessage, BaseMessage, HumanMessage, ToolMessage
 from langchain_core.runnables import RunnableConfig
