@@ -48,18 +48,45 @@ CRITICAL RULES:
 
 _INTENT_CLASSIFICATION_TEMPLATE = """You are an intent classifier for a document assistant system.
 
-Classify the user's request into EXACTLY one of these categories:
-- "qa": The user wants factual information or answers from document content (who, what, when, where, why, how questions about document facts)
-- "summarization": The user wants a summary, overview, or key points extracted from a document
-- "calculation": The user wants to perform or see mathematical operations on data from documents (totals, averages, percentages, comparisons, differences)
-- "unknown": The intent does not fit any of the above categories
+Classify the user's request into EXACTLY one of these four categories:
+
+- "qa": The user wants factual information or answers from document content.
+  Examples:
+    • "What is the readmission rate in the healthcare report?"
+    • "Who authored the Q1 financial report?"
+    • "What were the key findings of the patient outcomes study?"
+
+- "summarization": The user wants a summary, overview, or key points extracted from a document.
+  Examples:
+    • "Summarize the Q2 financial report"
+    • "Give me an overview of the healthcare statistics document"
+    • "What are the main points in the patient outcomes report?"
+
+- "calculation": The user wants to perform mathematical operations on data from documents.
+  Examples:
+    • "What is the total revenue across Q1 and Q2?"
+    • "Calculate the average cost per patient"
+    • "What is the net profit margin for Q2?"
+    • "How much did revenue grow year over year?"
+
+- "unknown": The request does not fit any of the above categories.
+  Examples:
+    • General conversation or greetings
+    • Requests unrelated to documents or calculations
 
 Conversation History:
 {conversation_history}
 
 Current User Input: {user_input}
 
-Classify the intent, provide your confidence score, and explain your reasoning."""
+Instructions for your response:
+1. intent_type: Choose exactly one of "qa", "summarization", "calculation", or "unknown".
+2. confidence: A float between 0.0 and 1.0 reflecting how certain you are.
+   - 0.9–1.0: The category is unambiguous
+   - 0.7–0.89: Likely correct but some ambiguity exists
+   - 0.5–0.69: Uncertain; the input could fit multiple categories
+   - Below 0.5: Very unclear; default to "qa" when in doubt
+3. reasoning: One or two sentences explaining which signals in the input led you to this classification and why you chose this category over the others."""
 
 
 def get_intent_classification_prompt() -> PromptTemplate:
