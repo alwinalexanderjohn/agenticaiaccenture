@@ -127,20 +127,35 @@ class DocumentAssistant:
     # ------------------------------------------------------------------
 
     def _extract_response(self, result: dict, fallback_input: str) -> str:
-        """Extract a human-readable string from the graph result."""
+        """Extract a human-readable string from the graph result, including source doc IDs."""
         current_response = result.get("current_response")
 
         if current_response is not None:
+            sources = getattr(current_response, "sources", [])
+            source_line = (
+                "\n\n📎 Sources: " + ", ".join(f"`{s}`" for s in sources)
+                if sources else ""
+            )
+
+            # Q&A response
             if hasattr(current_response, "answer"):
-                return current_response.answer
+                confidence = getattr(current_response, "confidence", None)
+                conf_line = f"\n🎯 Confidence: {confidence:.0%}" if confidence is not None else ""
+                return current_response.answer + conf_line + source_line
+
+            # Summarization response
             if hasattr(current_response, "summary"):
                 key_points = getattr(current_response, "key_points", [])
                 text = current_response.summary
                 if key_points:
                     text += "\n\nKey Points:\n" + "\n".join(f"  • {p}" for p in key_points)
-                return text
+                return text + source_line
+
+            # Calculation response
             if hasattr(current_response, "result"):
-                return current_response.result
+                expression = getattr(current_response, "expression", "")
+                expr_line = f"\n\n🧮 Expression: `{expression}`" if expression else ""
+                return current_response.result + expr_line + source_line
 
         # Fall back to last AI message in history
         for msg in reversed(result.get("messages", [])):

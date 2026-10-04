@@ -171,7 +171,12 @@ OPENAI_API_KEY=sk-...
 
 Run the Streamlit app:
 ```bash
-streamlit run streamlit_app.py
+streamlit run app.py
+```
+
+Or run the CLI assistant:
+```bash
+python main.py
 ```
 
 ---
@@ -181,28 +186,32 @@ streamlit run streamlit_app.py
 ### Q&A
 ```
 User:  What is the readmission rate in the healthcare report?
-Agent: The 30-day readmission rate is 8.3%, as reported in the Healthcare Statistics 2024
-       document (doc_healthcare_stats). Confidence: 0.95
+Agent: The 30-day readmission rate is 8.3%, as reported in the Healthcare Statistics 2026 document.
+       🎯 Confidence: 95%
+       📎 Sources: `doc_healthcare_stats`
 ```
 
 ### Summarization
 ```
 User:  Summarize the Q2 financial report
-Agent: Q2 2024 saw strong performance with total revenue of $5.1M and net profit of $1.9M.
+Agent: Q2 2026 saw strong performance with total revenue of $5.1M and net profit of $1.9M.
 
        Key Points:
        • Total Revenue: $5,100,000 (up from $4.2M in Q1)
        • Net Profit: $1,900,000 with a 67% gross margin
        • Year-over-Year Growth: 31%
        • Customer base expanded to 13,421
+       📎 Sources: `doc_financial_q2`
 ```
 
 ### Calculation
 ```
 User:  What is the combined net profit for Q1 and Q2?
-Agent: The combined net profit for Q1 and Q2 2024 is $3,300,000.
+Agent: The combined net profit for Q1 and Q2 2026 is $3,300,000.
        Q1 Net Profit ($1,400,000) + Q2 Net Profit ($1,900,000) = $3,300,000
-       Sources: doc_financial_q1, doc_financial_q2
+
+       🧮 Expression: `1400000 + 1900000`
+       📎 Sources: `doc_financial_q1`, `doc_financial_q2`
 ```
 
 ---
@@ -213,5 +222,5 @@ Agent: The combined net profit for Q1 and Q2 2024 is $3,300,000.
 |---|---|---|
 | `finance_transactions_500.csv` | 500 | Transaction records with revenue, COGS, profit |
 | `hospital_patient_records_500.csv` | 500 | Patient admissions, costs, outcomes |
-| `q3_2024_financial_report.csv` | 27 | Quarterly financial summary |
+| `q3_2026_financial_report.csv` | 27 | Quarterly financial summary |
 | `city_hospital_department_stats.csv` | 12 | 10-department hospital performance |

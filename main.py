@@ -14,19 +14,19 @@ WELCOME = """
 ║             Document Assistant (LangGraph)                 ║
 ╠════════════════════════════════════════════════════════════╣
 ║  Built-in documents:                                       ║
-║    • doc_financial_q1        – Q1 2024 Financial Report    ║
-║    • doc_financial_q2        – Q2 2024 Financial Report    ║
-║    • doc_healthcare_stats    – Healthcare Statistics 2024  ║
-║    • doc_healthcare_outcomes – Patient Outcomes 2024       ║
+║    • doc_financial_q1        – Q1 2026 Financial Report    ║
+║    • doc_financial_q2        – Q2 2026 Financial Report    ║
+║    • doc_healthcare_stats    – Healthcare Statistics 2026  ║
+║    • doc_healthcare_outcomes – Patient Outcomes 2026       ║
 ╠════════════════════════════════════════════════════════════╣
 ║  Commands:                                                 ║
-║    upload <filepath>  – Load a .txt / .md / .csv file      ║
+║    upload <filepath>  – Load a .txt / .md / .csv / .pdf    ║
 ║    docs               – List all available documents       ║
 ║    info               – Show session info                  ║
 ║    quit / exit        – Quit                               ║
 ╠════════════════════════════════════════════════════════════╣
 ║  Example questions:                                        ║
-║    "What was the net profit in Q1 2024?"                   ║
+║    "What was the net profit in Q1 2026?"                   ║
 ║    "Summarize the healthcare statistics report"            ║
 ║    "What is the total revenue across Q1 and Q2?"           ║
 ╚════════════════════════════════════════════════════════════╝
