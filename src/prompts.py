@@ -1,4 +1,4 @@
-from langchain_core.prompts import PromptTemplate, ChatPromptTemplate
+from langchain_core.prompts import PromptTemplate, ChatPromptTemplate, MessagesPlaceholder
 
 # --- System Prompts ---
 
@@ -95,5 +95,6 @@ def get_chat_prompt_template(intent_type: str) -> ChatPromptTemplate:
 
     return ChatPromptTemplate.from_messages([
         ("system", system_prompt),
+        MessagesPlaceholder(variable_name="conversation_history", optional=True),
         ("human", "{user_input}"),
     ])

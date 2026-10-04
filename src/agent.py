@@ -157,7 +157,11 @@ def qa_agent(state: AgentState, config: RunnableConfig) -> dict:
     # Phase 1 — gather information via tool-calling loop
     # Inject available document IDs so the LLM knows what to retrieve
     enriched_input = f"{state['user_input']}\n\n[{_available_docs_hint()}]"
-    messages = prompt_template.format_messages(user_input=enriched_input)
+    recent_history = state.get("messages", [])[-6:]
+    messages = prompt_template.format_messages(
+        user_input=enriched_input,
+        conversation_history=recent_history,
+    )
     messages, tools_used, context_snippets = _run_tool_loop(llm_with_tools, tool_map, messages)
 
     # Fallback: if the LLM skipped tool calls, retrieve directly
@@ -197,7 +201,11 @@ def summarization_agent(state: AgentState, config: RunnableConfig) -> dict:
 
     # Phase 1 — retrieve document content
     enriched_input = f"{state['user_input']}\n\n[{_available_docs_hint()}]"
-    messages = prompt_template.format_messages(user_input=enriched_input)
+    recent_history = state.get("messages", [])[-6:]
+    messages = prompt_template.format_messages(
+        user_input=enriched_input,
+        conversation_history=recent_history,
+    )
     messages, tools_used, context_snippets = _run_tool_loop(llm_with_tools, tool_map, messages)
 
     # Fallback: if the LLM skipped tool calls, retrieve directly
@@ -237,7 +245,11 @@ def calculation_agent(state: AgentState, config: RunnableConfig) -> dict:
 
     # Run a longer tool-calling loop so the model can call document_reader then calculator
     enriched_input = f"{state['user_input']}\n\n[{_available_docs_hint()}]"
-    messages = prompt_template.format_messages(user_input=enriched_input)
+    recent_history = state.get("messages", [])[-6:]
+    messages = prompt_template.format_messages(
+        user_input=enriched_input,
+        conversation_history=recent_history,
+    )
     messages, tools_used, context_snippets = _run_tool_loop(llm_with_tools, tool_map, messages, max_iter=8)
 
     # Fallback: if the LLM skipped tool calls, retrieve directly
