@@ -6,7 +6,7 @@ from typing import Dict, List, Optional
 # Sample financial and healthcare documents
 SAMPLE_DOCUMENTS: Dict[str, Dict] = {
     "doc_financial_q1": {
-        "content": """Q1 2024 Financial Report
+        "content": """Q1 2026 Financial Report
 Total Revenue: $4,200,000
 Operating Expenses: $2,800,000
 Net Profit: $1,400,000
@@ -20,11 +20,11 @@ Total Liabilities: $3,100,000
 Debt-to-Equity Ratio: 0.25
 Return on Assets: 9.2%
 Number of Customers: 12,000""",
-        "title": "Q1 2024 Financial Report",
+        "title": "Q1 2026 Financial Report",
         "type": "financial",
     },
     "doc_financial_q2": {
-        "content": """Q2 2024 Financial Report
+        "content": """Q2 2026 Financial Report
 Total Revenue: $5,100,000
 Operating Expenses: $3,200,000
 Net Profit: $1,900,000
@@ -38,11 +38,11 @@ Total Liabilities: $3,800,000
 Debt-to-Equity Ratio: 0.28
 Return on Assets: 10.3%
 Number of Customers: 13,421""",
-        "title": "Q2 2024 Financial Report",
+        "title": "Q2 2026 Financial Report",
         "type": "financial",
     },
     "doc_healthcare_stats": {
-        "content": """Healthcare Statistics Report 2024
+        "content": """Healthcare Statistics Report 2026
 Total Patients Treated: 12,450
 Average Length of Stay: 4.2 days
 Readmission Rate: 8.3%
@@ -57,11 +57,11 @@ Annual Operating Costs: $58,200,000
 Pharmacy Expenditure: $8,300,000
 Number of Beds: 450
 Bed Occupancy Rate: 78%""",
-        "title": "Healthcare Statistics 2024",
+        "title": "Healthcare Statistics 2026",
         "type": "healthcare",
     },
     "doc_healthcare_outcomes": {
-        "content": """Patient Outcomes Report 2024
+        "content": """Patient Outcomes Report 2026
 Total Procedures: 8,240
 Successful Outcomes: 7,952 (96.5%)
 Complications Rate: 3.5%
@@ -74,7 +74,7 @@ Follow-up Compliance Rate: 78%
 Preventive Care Visits: 4,650
 Total Surgeries: 1,850
 Minimally Invasive Procedures: 1,240""",
-        "title": "Patient Outcomes Report 2024",
+        "title": "Patient Outcomes Report 2026",
         "type": "healthcare",
     },
 }
