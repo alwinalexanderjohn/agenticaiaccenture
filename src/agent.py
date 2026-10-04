@@ -1,5 +1,6 @@
 import operator
 import os
+import logging
 from typing import Annotated, Any, List, Optional, TypedDict
 
 # Register Pydantic schemas so InMemorySaver can serialize them without warnings
@@ -10,6 +11,8 @@ from langchain_core.runnables import RunnableConfig
 from langgraph.checkpoint.memory import InMemorySaver
 from langgraph.graph import END, StateGraph
 from langgraph.graph.message import add_messages
+
+from src.tools import ToolLogger
 
 from src.prompts import (
     QA_SYSTEM_PROMPT,
@@ -66,10 +69,18 @@ def _direct_retrieve(user_input: str) -> list[str]:
             {"id": did, "title": d["title"], "content": d["content"]}
             for did, d in list(retriever.documents.items())[:2]
         ]
-    return [
+    snippets = [
         f"[Document ID: {r['id']}]\nTitle: {r['title']}\n\n{r['content']}"
         for r in results
     ]
+    ids = [r["id"] for r in results]
+    ToolLogger.log(
+        "_direct_retrieve",
+        user_input,
+        f"Fallback retrieved {len(snippets)} doc(s): {ids}",
+        status="FALLBACK",
+    )
+    return snippets
 
 
 def _run_tool_loop(llm_with_tools, tool_map: dict, messages: list, max_iter: int = 5):

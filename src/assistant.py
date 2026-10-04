@@ -4,12 +4,12 @@ import os
 from dataclasses import dataclass, field
 from datetime import datetime
 from pathlib import Path
-from typing import Optional
+from typing import List, Optional
 
 from langchain_openai import ChatOpenAI
 
 from src.agent import AgentState, create_workflow
-from src.tools import create_tools
+from src.tools import create_tools, set_session_context
 
 
 # ---------------------------------------------------------------------------
@@ -18,12 +18,13 @@ from src.tools import create_tools
 
 @dataclass
 class Session:
-    """Represents a single conversation session."""
+    """Represents a single conversation session with full turn history."""
     session_id: str
     user_id: str
     created_at: datetime = field(default_factory=datetime.now)
     is_first_message: bool = True
     message_count: int = 0
+    conversation_history: List[dict] = field(default_factory=list)
 
     def to_dict(self) -> dict:
         return {
@@ -31,6 +32,7 @@ class Session:
             "user_id": self.user_id,
             "created_at": self.created_at.isoformat(),
             "message_count": self.message_count,
+            "conversation_history": self.conversation_history,
         }
 
 
@@ -57,16 +59,18 @@ class DocumentAssistant:
         """Start a new conversation session and return its ID."""
         session_id = str(uuid.uuid4())
         self.current_session = Session(session_id=session_id, user_id=user_id)
+        # Direct all tool logs to this session's own log file
+        set_session_context(session_id)
         print(f"[Session started] ID: {session_id}")
         return session_id
 
     def save_session(self) -> None:
-        """Persist the current session metadata to disk."""
+        """Persist the full session (metadata + conversation history) to disk."""
         if not self.current_session:
             return
         path = self.sessions_dir / f"{self.current_session.session_id}.json"
         with open(path, "w", encoding="utf-8") as f:
-            json.dump(self.current_session.to_dict(), f, indent=2)
+            json.dump(self.current_session.to_dict(), f, indent=2, default=str)
 
     # ------------------------------------------------------------------
     # Message processing
@@ -84,7 +88,6 @@ class DocumentAssistant:
         if not self.current_session:
             self.start_session()
 
-        # Task 2.6 — set thread_id, llm, and tools in the configurable dict
         config = {
             "configurable": {
                 "thread_id": self.current_session.session_id,
@@ -93,9 +96,6 @@ class DocumentAssistant:
             }
         }
 
-        # On the first message of a session, supply the full initial state.
-        # On subsequent messages LangGraph loads the checkpoint and we only
-        # need to supply the fields that change.
         if self.current_session.is_first_message:
             state: dict = {
                 "user_input": user_input,
@@ -114,13 +114,32 @@ class DocumentAssistant:
         else:
             state = {"user_input": user_input, "tools_used": [], "current_response": None}
 
-        # Invoke the compiled graph
         result = self.workflow.invoke(state, config=config)
 
+        response_text = self._extract_response(result, user_input)
+
+        # ── Build turn record for session history ──────────────────────────
+        intent = result.get("intent")
+        current_resp = result.get("current_response")
+        sources = getattr(current_resp, "sources", []) if current_resp else []
+
+        turn = {
+            "turn": self.current_session.message_count + 1,
+            "timestamp": datetime.now().isoformat(),
+            "user_input": user_input,
+            "intent_type": intent.intent_type if intent else "unknown",
+            "intent_confidence": round(intent.confidence, 3) if intent else None,
+            "intent_reasoning": intent.reasoning if intent else None,
+            "tools_used": result.get("tools_used", []),
+            "sources": sources,
+            "response": response_text,
+            "conversation_summary": result.get("conversation_summary", ""),
+        }
+        self.current_session.conversation_history.append(turn)
         self.current_session.message_count += 1
         self.save_session()
 
-        return self._extract_response(result, user_input)
+        return response_text
 
     # ------------------------------------------------------------------
     # Internal helpers
@@ -137,13 +156,11 @@ class DocumentAssistant:
                 if sources else ""
             )
 
-            # Q&A response
             if hasattr(current_response, "answer"):
                 confidence = getattr(current_response, "confidence", None)
                 conf_line = f"\n🎯 Confidence: {confidence:.0%}" if confidence is not None else ""
                 return current_response.answer + conf_line + source_line
 
-            # Summarization response
             if hasattr(current_response, "summary"):
                 key_points = getattr(current_response, "key_points", [])
                 text = current_response.summary
@@ -151,13 +168,11 @@ class DocumentAssistant:
                     text += "\n\nKey Points:\n" + "\n".join(f"  • {p}" for p in key_points)
                 return text + source_line
 
-            # Calculation response
             if hasattr(current_response, "result"):
                 expression = getattr(current_response, "expression", "")
                 expr_line = f"\n\n🧮 Expression: `{expression}`" if expression else ""
                 return current_response.result + expr_line + source_line
 
-        # Fall back to last AI message in history
         for msg in reversed(result.get("messages", [])):
             from langchain_core.messages import AIMessage
             if isinstance(msg, AIMessage) and msg.content:

@@ -1,6 +1,5 @@
 import re
 import logging
-import os
 from datetime import datetime
 from pathlib import Path
 from typing import List
@@ -9,27 +8,36 @@ from langchain.tools import tool
 
 from src.retrieval import retriever
 
-# ── File-based logging setup ────────────────────────────────────────────────
+# ── Logs directory ──────────────────────────────────────────────────────────
 _LOGS_DIR = Path("logs")
 _LOGS_DIR.mkdir(exist_ok=True)
 
-_log_file = _LOGS_DIR / f"tool_calls_{datetime.now().strftime('%Y-%m-%d')}.log"
-_file_handler = logging.FileHandler(_log_file, encoding="utf-8")
-_file_handler.setFormatter(logging.Formatter("%(asctime)s  %(levelname)-8s  %(message)s"))
+# Module-level session context — set by DocumentAssistant.start_session()
+_current_session_id: str = "unknown"
 
-logger = logging.getLogger(__name__)
-logger.setLevel(logging.INFO)
-if not any(isinstance(h, logging.FileHandler) for h in logger.handlers):
-    logger.addHandler(_file_handler)
+
+def set_session_context(session_id: str) -> None:
+    """Called by DocumentAssistant so tool logs are written to the session's own file."""
+    global _current_session_id
+    _current_session_id = session_id
 
 
 class ToolLogger:
-    """Logs every tool invocation to logs/<date>.log and to the Python logger."""
+    """Appends every tool invocation to logs/<session_id>.log."""
 
     @staticmethod
-    def log(tool_name: str, input_data: str, output: str) -> None:
-        logger.info("[Tool: %s] Input: %.200s", tool_name, input_data)
-        logger.info("[Tool: %s] Output: %.200s", tool_name, output)
+    def log(tool_name: str, input_data: str, output: str, status: str = "OK") -> None:
+        log_file = _LOGS_DIR / f"{_current_session_id}.log"
+        ts = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        with open(log_file, "a", encoding="utf-8") as f:
+            f.write(f"[{ts}]  Tool: {tool_name}  |  Status: {status}\n")
+            f.write(f"  Input:  {input_data}\n")
+            f.write(f"  Output: {output}\n\n")
+
+        # Also emit to Python logger for console visibility
+        logging.getLogger(__name__).info(
+            "[%s] %s → %s", tool_name, input_data[:120], output[:120]
+        )
 
 
 def create_calculator_tool():
@@ -49,20 +57,18 @@ def create_calculator_tool():
             A formatted string showing the result.
         """
         try:
-            # Strip thousands-separator commas before validation
             clean_expr = expression.replace(",", "").strip()
-
-            # Safety check: only allow digits and basic operators
             safe_pattern = r'^[\d\s\+\-\*\/\.\(\)\%]+$'
             if not re.match(safe_pattern, clean_expr):
-                return (
+                msg = (
                     f"Error: Expression '{expression}' contains unsupported characters. "
                     "Only digits and + - * / ( ) . % are allowed."
                 )
+                ToolLogger.log("calculator", expression, msg, status="INVALID_INPUT")
+                return msg
 
             result = eval(clean_expr, {"__builtins__": {}}, {})  # noqa: S307
 
-            # Format result: integer-valued floats without decimal point
             if isinstance(result, float) and result == int(result):
                 formatted = f"{int(result):,}"
             elif isinstance(result, float):
@@ -75,9 +81,13 @@ def create_calculator_tool():
             return output
 
         except ZeroDivisionError:
-            return "Error: Division by zero."
+            msg = "Error: Division by zero."
+            ToolLogger.log("calculator", expression, msg, status="ZERO_DIVISION")
+            return msg
         except Exception as exc:
-            return f"Error evaluating expression: {exc}"
+            msg = f"Error evaluating expression: {exc}"
+            ToolLogger.log("calculator", expression, msg, status="ERROR")
+            return msg
 
     return calculator
 
@@ -107,41 +117,50 @@ def create_document_reader_tool():
             The full content of the matching document(s), or a list of available IDs.
         """
         try:
-            # Return document catalogue when asked
+            # ── Path 1: catalogue listing ────────────────────────────────────
             if query.strip().lower() in ("list", "list documents", "available documents", ""):
                 doc_list = _build_doc_list()
-                return f"Available documents:\n{doc_list}"
+                output = f"Available documents:\n{doc_list}"
+                ToolLogger.log("document_reader", query, output, status="LIST")
+                return output
 
-            # Try exact ID lookup first
+            # ── Path 2: exact document ID lookup ─────────────────────────────
             doc = retriever.get_document(query)
             if doc:
                 output = f"[Document ID: {query}]\nTitle: {doc['title']}\n\n{doc['content']}"
-                ToolLogger.log("document_reader", query, output[:80])
+                ToolLogger.log("document_reader", query, output, status="EXACT_MATCH")
                 return output
 
-            # Fall back to keyword search across ALL documents (including uploads)
+            # ── Path 3: keyword search ───────────────────────────────────────
             results = retriever.search_documents(query, top_k=3)
-            if not results:
-                # Last resort: return all documents so the LLM has something to work with
-                all_docs = list(retriever.documents.items())
-                if all_docs:
-                    parts = [f"[Document ID: {did}]\nTitle: {d['title']}\n\n{d['content']}"
-                             for did, d in all_docs[:2]]
-                    return "\n\n" + ("=" * 60 + "\n\n").join(parts)
-                return "No documents found matching your query."
+            if results:
+                parts = [
+                    f"[Document ID: {r['id']}]\nTitle: {r['title']}\n\n{r['content']}"
+                    for r in results
+                ]
+                output = ("\n\n" + "=" * 60 + "\n\n").join(parts)
+                ToolLogger.log("document_reader", query, output, status="KEYWORD_MATCH")
+                return output
 
-            parts = []
-            for doc in results:
-                parts.append(
-                    f"[Document ID: {doc['id']}]\nTitle: {doc['title']}\n\n{doc['content']}"
-                )
+            # ── Path 4: last-resort — return all documents ───────────────────
+            all_docs = list(retriever.documents.items())
+            if all_docs:
+                parts = [
+                    f"[Document ID: {did}]\nTitle: {d['title']}\n\n{d['content']}"
+                    for did, d in all_docs[:2]
+                ]
+                output = ("\n\n" + "=" * 60 + "\n\n").join(parts)
+                ToolLogger.log("document_reader", query, output, status="FALLBACK_ALL")
+                return output
 
-            output = "\n\n" + ("=" * 60) + "\n\n".join(parts)
-            ToolLogger.log("document_reader", query, output[:80])
-            return output
+            msg = "No documents found matching your query."
+            ToolLogger.log("document_reader", query, msg, status="NO_MATCH")
+            return msg
 
         except Exception as exc:
-            return f"Error retrieving document: {exc}"
+            msg = f"Error retrieving document: {exc}"
+            ToolLogger.log("document_reader", query, msg, status="ERROR")
+            return msg
 
     return document_reader
 

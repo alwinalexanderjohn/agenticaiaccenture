@@ -50,43 +50,85 @@ _INTENT_CLASSIFICATION_TEMPLATE = """You are an intent classifier for a document
 
 Classify the user's request into EXACTLY one of these four categories:
 
-- "qa": The user wants factual information or answers from document content.
-  Examples:
-    • "What is the readmission rate in the healthcare report?"
-    • "Who authored the Q1 financial report?"
-    • "What were the key findings of the patient outcomes study?"
+──────────────────────────────────────────────────────────────
+CATEGORY DEFINITIONS WITH EXAMPLES
+──────────────────────────────────────────────────────────────
 
-- "summarization": The user wants a summary, overview, or key points extracted from a document.
-  Examples:
-    • "Summarize the Q2 financial report"
-    • "Give me an overview of the healthcare statistics document"
-    • "What are the main points in the patient outcomes report?"
+"qa" — The user wants a factual answer retrieved from document content.
+  Example 1: "What is the 30-day readmission rate?"
+             → intent_type: "qa", confidence: 0.95
+             → reasoning: "Direct factual question about a metric in the healthcare document."
+  Example 2: "Who prepared the Q1 financial report?"
+             → intent_type: "qa", confidence: 0.92
+             → reasoning: "Asks for a specific piece of information (author) from a document."
+  Example 3: "What were the patient outcomes for cardiac surgery?"
+             → intent_type: "qa", confidence: 0.88
+             → reasoning: "Factual lookup from the patient outcomes report; no arithmetic needed."
 
-- "calculation": The user wants to perform mathematical operations on data from documents.
-  Examples:
-    • "What is the total revenue across Q1 and Q2?"
-    • "Calculate the average cost per patient"
-    • "What is the net profit margin for Q2?"
-    • "How much did revenue grow year over year?"
+"summarization" — The user wants a summary, overview, or key points extracted from a document.
+  Example 1: "Summarize the Q2 financial report."
+             → intent_type: "summarization", confidence: 0.97
+             → reasoning: "The word 'summarize' is an explicit signal; the user wants condensed content."
+  Example 2: "Give me an overview of the healthcare statistics."
+             → intent_type: "summarization", confidence: 0.93
+             → reasoning: "'Overview' signals a high-level digest rather than a specific fact or number."
+  Example 3: "What are the main points of the patient outcomes document?"
+             → intent_type: "summarization", confidence: 0.90
+             → reasoning: "'Main points' asks for extracted key ideas, not a specific value or calculation."
 
-- "unknown": The request does not fit any of the above categories.
-  Examples:
-    • General conversation or greetings
-    • Requests unrelated to documents or calculations
+"calculation" — The user wants arithmetic performed on data from documents.
+  Tie-breaking rule: if the answer requires a numeric operation (addition, subtraction,
+  multiplication, division, percentage, average, growth rate), classify as "calculation"
+  even if the question uses words like "what" or "how".
+  Example 1: "What is the combined net profit for Q1 and Q2?"
+             → intent_type: "calculation", confidence: 0.95
+             → reasoning: "Requires adding two profit figures from separate documents."
+  Example 2: "Calculate the average cost per patient across all departments."
+             → intent_type: "calculation", confidence: 0.97
+             → reasoning: "'Calculate' is explicit; dividing total cost by patient count is required."
+  Example 3: "How much did revenue grow from Q1 to Q2?"
+             → intent_type: "calculation", confidence: 0.91
+             → reasoning: "Growth requires subtraction or percentage change — arithmetic is mandatory."
 
-Conversation History:
+"unknown" — The request does not involve documents or arithmetic.
+  Example 1: "Hello, how are you?"
+             → intent_type: "unknown", confidence: 0.98
+             → reasoning: "Greeting with no document reference or calculation intent."
+  Example 2: "Can you help me write an email?"
+             → intent_type: "unknown", confidence: 0.95
+             → reasoning: "Unrelated task; no financial or healthcare document involved."
+
+──────────────────────────────────────────────────────────────
+CONFIDENCE SCORING GUIDE
+──────────────────────────────────────────────────────────────
+0.90–1.00: Intent is explicit and unambiguous (e.g., "summarize", "calculate", "what is X").
+0.70–0.89: Likely correct but one other category is plausible.
+0.50–0.69: Genuinely ambiguous; the request fits two categories roughly equally.
+Below 0.50: Very unclear — default to "qa" unless strong evidence for another category.
+
+──────────────────────────────────────────────────────────────
+TIE-BREAKING RULES
+──────────────────────────────────────────────────────────────
+1. Any request requiring arithmetic → "calculation" (takes priority over "qa").
+2. "Tell me about / overview / highlight" → "summarization" (not "qa").
+3. Follow-up requests (e.g., "now do the same for Q2") → use conversation_history
+   to inherit the intent of the previous turn.
+4. When truly uncertain → "qa" is the safest fallback.
+
+──────────────────────────────────────────────────────────────
+CONVERSATION HISTORY
+──────────────────────────────────────────────────────────────
 {conversation_history}
 
 Current User Input: {user_input}
 
-Instructions for your response:
-1. intent_type: Choose exactly one of "qa", "summarization", "calculation", or "unknown".
-2. confidence: A float between 0.0 and 1.0 reflecting how certain you are.
-   - 0.9–1.0: The category is unambiguous
-   - 0.7–0.89: Likely correct but some ambiguity exists
-   - 0.5–0.69: Uncertain; the input could fit multiple categories
-   - Below 0.5: Very unclear; default to "qa" when in doubt
-3. reasoning: One or two sentences explaining which signals in the input led you to this classification and why you chose this category over the others."""
+──────────────────────────────────────────────────────────────
+RESPONSE INSTRUCTIONS
+──────────────────────────────────────────────────────────────
+1. intent_type: exactly one of "qa", "summarization", "calculation", "unknown".
+2. confidence: float 0.0–1.0 using the scale above.
+3. reasoning: 1–2 sentences naming the specific words or phrases that drove your
+   choice AND why you ruled out the next-closest category."""
 
 
 def get_intent_classification_prompt() -> PromptTemplate:
