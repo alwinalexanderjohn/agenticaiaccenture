@@ -12,17 +12,16 @@ from src.retrieval import retriever
 
 # ── Colour helpers (Windows-safe) ─────────────────────────────────────────────
 def _c(code: str, text: str) -> str:
-    """Wrap text in an ANSI colour code if the terminal supports it."""
     if sys.stdout.isatty() and os.name != "nt" or os.environ.get("TERM"):
         return f"\033[{code}m{text}\033[0m"
     return text
 
-G  = lambda t: _c("32", t)   # green
-B  = lambda t: _c("34", t)   # blue
-Y  = lambda t: _c("33", t)   # yellow
-C  = lambda t: _c("36", t)   # cyan
-R  = lambda t: _c("31", t)   # red
-BD = lambda t: _c("1",  t)   # bold
+G  = lambda t: _c("32", t)
+B  = lambda t: _c("34", t)
+Y  = lambda t: _c("33", t)
+C  = lambda t: _c("36", t)
+R  = lambda t: _c("31", t)
+BD = lambda t: _c("1",  t)
 
 
 WELCOME = """
@@ -52,14 +51,28 @@ MENU = """
 """
 
 
+# ── Shared sub-menu after every action ────────────────────────────────────────
+def _sub_menu(repeat_label: str) -> bool:
+    """Show 'do again / back to main menu' prompt. Returns True to repeat."""
+    print()
+    print(f"  ┌──────────────────────────────────────────┐")
+    print(f"  │  1  🔄  {repeat_label:<33}│")
+    print(f"  │  0  ↩   Back to main menu                │")
+    print(f"  └──────────────────────────────────────────┘")
+    try:
+        sub = input("  Enter option (0 or 1): ").strip()
+    except (EOFError, KeyboardInterrupt):
+        return False
+    return sub == "1"
+
+
 # ── File-picker via tkinter (opens native OS dialog) ──────────────────────────
 def _pick_file() -> str | None:
-    """Open a native file-browser dialog and return the chosen path (or None)."""
     try:
         import tkinter as tk
         from tkinter import filedialog
         root = tk.Tk()
-        root.withdraw()          # hide the blank Tk window
+        root.withdraw()
         root.attributes("-topmost", True)
         path = filedialog.askopenfilename(
             title="Select a document to upload",
@@ -79,104 +92,121 @@ def _pick_file() -> str | None:
         return None
 
 
+# ── Option 1: Upload ───────────────────────────────────────────────────────────
 def _upload_flow() -> None:
-    print(Y("\n  Opening file browser … (a dialog window will appear)"))
-    file_path = _pick_file()
+    while True:
+        print(Y("\n  Opening file browser … (a dialog window will appear)"))
+        file_path = _pick_file()
 
-    if not file_path:
-        # Fallback: let user type the path manually
-        print(Y("  No file selected. Enter path manually (or press Enter to cancel):"))
-        try:
-            file_path = input("  Path: ").strip().strip('"').strip("'")
-        except (EOFError, KeyboardInterrupt):
-            file_path = ""
+        if not file_path:
+            print(Y("  No file selected. Enter path manually (or press Enter to cancel):"))
+            try:
+                file_path = input("  Path: ").strip().strip('"').strip("'")
+            except (EOFError, KeyboardInterrupt):
+                file_path = ""
 
-    if not file_path:
-        print("  Cancelled.")
-        return
+        if not file_path:
+            print("  Cancelled.")
+        else:
+            print(f"  Uploading: {file_path} …")
+            result = retriever.load_document(file_path)
+            if result.startswith("Error"):
+                print(R(f"  {result}"))
+            else:
+                print(G(f"  ✓ Loaded — document ID: '{result}'"))
+                print(f"  Try: option 3 → \"Summarize {result}\"")
 
-    print(f"  Uploading: {file_path} …")
-    result = retriever.load_document(file_path)
-    if result.startswith("Error"):
-        print(R(f"  {result}"))
-    else:
-        print(G(f"  ✓ Loaded — document ID: '{result}'"))
-        print(f"  Try: option 3 → \"Summarize {result}\"")
+        if not _sub_menu("Upload another document    "):
+            return
 
 
+# ── Option 2: Q&A ─────────────────────────────────────────────────────────────
 def _qa_flow(assistant: DocumentAssistant) -> None:
-    print(B("\n  Enter your question (or press Enter to cancel):"))
-    try:
-        question = input("  ❓ ").strip()
-    except (EOFError, KeyboardInterrupt):
-        return
-    if not question:
-        print("  Cancelled.")
-        return
-    print(BD("\n  Assistant:"), flush=True)
-    try:
-        print(assistant.process_message(question))
-    except Exception as exc:
-        print(R(f"  [Error] {exc}"))
+    while True:
+        print(B("\n  Enter your question (or press Enter to cancel):"))
+        try:
+            question = input("  ❓ ").strip()
+        except (EOFError, KeyboardInterrupt):
+            return
+        if not question:
+            print("  Cancelled.")
+        else:
+            print(BD("\n  Assistant:"), flush=True)
+            try:
+                print(assistant.process_message(question))
+            except Exception as exc:
+                print(R(f"  [Error] {exc}"))
+
+        if not _sub_menu("Ask another question      "):
+            return
 
 
+# ── Option 3: Summarize ────────────────────────────────────────────────────────
 def _summarize_flow(assistant: DocumentAssistant) -> None:
-    print(C("\n  What would you like summarized?"))
-    print("  (Enter a document ID, topic, or 'all' for all loaded docs.)")
-    print("  Examples:  doc_financial_q1  |  healthcare report  |  all")
-    try:
-        topic = input("  📄 ").strip()
-    except (EOFError, KeyboardInterrupt):
-        return
-    if not topic:
-        print("  Cancelled.")
-        return
-    prompt = f"Please summarize: {topic}"
-    print(BD("\n  Assistant:"), flush=True)
-    try:
-        print(assistant.process_message(prompt))
-    except Exception as exc:
-        print(R(f"  [Error] {exc}"))
+    while True:
+        print(C("\n  What would you like summarized?"))
+        print("  (Enter a document ID, topic, or 'all' for all loaded docs.)")
+        print("  Examples:  doc_financial_q1  |  healthcare report  |  all")
+        print("  (Press Enter to cancel.)")
+        try:
+            topic = input("  📄 ").strip()
+        except (EOFError, KeyboardInterrupt):
+            return
+        if not topic:
+            print("  Cancelled.")
+        else:
+            print(BD("\n  Assistant:"), flush=True)
+            try:
+                print(assistant.process_message(f"Please summarize: {topic}"))
+            except Exception as exc:
+                print(R(f"  [Error] {exc}"))
+
+        if not _sub_menu("Summarize another document"):
+            return
 
 
+# ── Option 4: Calculator ───────────────────────────────────────────────────────
 def _calculator_flow(assistant: DocumentAssistant) -> None:
     while True:
         print(Y("\n  What would you like to calculate?"))
         print("  Examples:  total revenue Q1 and Q2  |  average cost per patient  |  net profit margin")
-        print("  (Press Enter with no input to go back to the main menu.)")
+        print("  (Press Enter to cancel.)")
         try:
             question = input("  🧮 ").strip()
         except (EOFError, KeyboardInterrupt):
             return
         if not question:
-            print("  Returning to main menu.")
-            return
+            print("  Cancelled.")
+        else:
+            print(BD("\n  Assistant:"), flush=True)
+            try:
+                print(assistant.process_message(f"Calculate: {question}"))
+            except Exception as exc:
+                print(R(f"  [Error] {exc}"))
 
-        prompt = f"Calculate: {question}"
-        print(BD("\n  Assistant:"), flush=True)
-        try:
-            print(assistant.process_message(prompt))
-        except Exception as exc:
-            print(R(f"  [Error] {exc}"))
-
-        print()
-        print("  ┌──────────────────────────────────────┐")
-        print("  │  1  🧮  Ask another calculation       │")
-        print("  │  0  ↩   Back to main menu             │")
-        print("  └──────────────────────────────────────┘")
-        try:
-            sub = input("  Enter option (0 or 1): ").strip()
-        except (EOFError, KeyboardInterrupt):
-            return
-        if sub != "1":
+        if not _sub_menu("Ask another calculation   "):
             return
 
 
-def _print_docs() -> None:
-    docs = retriever.list_documents()
-    print(f"\n  {len(docs)} document(s) loaded:")
-    for d in docs:
-        print(f"    • {BD(d['id']):<40}  [{d['type']}]  {d['title']}")
+# ── Option 5: Show docs ────────────────────────────────────────────────────────
+def _docs_flow() -> None:
+    while True:
+        docs = retriever.list_documents()
+        print(f"\n  {len(docs)} document(s) loaded:")
+        for d in docs:
+            print(f"    • {BD(d['id']):<40}  [{d['type']}]  {d['title']}")
+
+        if not _sub_menu("Refresh document list     "):
+            return
+
+
+# ── Option 6: Session info ─────────────────────────────────────────────────────
+def _info_flow(assistant: DocumentAssistant) -> None:
+    while True:
+        print(f"\n  Session Info: {assistant.get_session_info()}")
+
+        if not _sub_menu("Refresh session info      "):
+            return
 
 
 # ── Main loop ─────────────────────────────────────────────────────────────────
@@ -209,16 +239,14 @@ def main():
         elif choice == "3":
             _summarize_flow(assistant)
         elif choice == "4":
-            _calculator_flow(assistant)  # has its own sub-menu loop
-            continue                      # skip the generic pause below
+            _calculator_flow(assistant)
         elif choice == "5":
-            _print_docs()
+            _docs_flow()
         elif choice == "6":
-            print(f"\n  Session Info: {assistant.get_session_info()}")
+            _info_flow(assistant)
         else:
             print(R("  Invalid option. Please enter a number from 0 to 6."))
-
-        input("\n  Press Enter to return to the menu …")
+            input("\n  Press Enter to return to the menu …")
 
 
 if __name__ == "__main__":
