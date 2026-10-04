@@ -1,0 +1,33 @@
+[2026-10-05 10:05:34]  Tool: document_reader  |  Status: EXACT_MATCH
+  Input:  doc_financial_q2
+  Output: [Document ID: doc_financial_q2]
+  Title: Q2 2026 Financial Report
+
+  Quarterly Financial Summary - Q2 2026
+  Total Revenue: $5,100,000
+  Cost of Goods Sold: $1,683,000
+  Gross Profit: $3,417,000
+  Gross Margin: 67%
+  Operating Expenses: $1,650,000
+  Net Profit: $1,900,000 (after interest and tax adjustments)
+  Year-over-Year Revenue Growth: 31%
+  Quarter-over-Quarter Growth: 21%
+  Total Customers: 13,421
+  New Customers Acquired: 2,216
+
+[2026-10-05 10:07:48]  Tool: document_reader  |  Status: EXACT_MATCH
+  Input:  doc_financial_q1
+  Output: [Document ID: doc_financial_q1]
+  Title: Q1 2026 Financial Report
+
+  Quarterly Financial Summary - Q1 2026
+  Total Revenue: $4,200,000
+  Cost of Goods Sold: $1,512,000
+  Gross Profit: $2,688,000
+  Gross Margin: 64%
+  Operating Expenses: $1,380,000
+  Net Profit: $1,400,000 (after interest and tax adjustments)
+  Year-over-Year Revenue Growth: 18%
+  Total Customers: 11,205
+  New Customers Acquired: 1,850
+

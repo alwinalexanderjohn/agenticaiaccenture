@@ -1,0 +1,32 @@
+{
+  "session_id": "a1b2c3d4-qa-healthcare-session",
+  "user_id": "user_001",
+  "created_at": "2026-10-05T09:15:00.000000",
+  "message_count": 2,
+  "conversation_history": [
+    {
+      "turn": 1,
+      "timestamp": "2026-10-05T09:15:22.341000",
+      "user_input": "What is the 30-day readmission rate in the healthcare report?",
+      "intent_type": "qa",
+      "intent_confidence": 0.95,
+      "intent_reasoning": "The word 'what is' signals a direct factual lookup; no arithmetic is required, ruling out 'calculation'.",
+      "tools_used": ["document_reader"],
+      "sources": ["doc_healthcare_stats"],
+      "response": "The 30-day readmission rate is 8.3%, as reported in the Healthcare Statistics 2026 document.\n⛳ Confidence: 95%\n\n📎 Sources: `doc_healthcare_stats`",
+      "conversation_summary": ""
+    },
+    {
+      "turn": 2,
+      "timestamp": "2026-10-05T09:17:05.812000",
+      "user_input": "What was the average length of hospital stay?",
+      "intent_type": "qa",
+      "intent_confidence": 0.93,
+      "intent_reasoning": "Follow-up factual question about a healthcare metric; 'average' here is a reported statistic, not a calculation to perform.",
+      "tools_used": ["document_reader"],
+      "sources": ["doc_healthcare_stats"],
+      "response": "The average length of hospital stay was 4.2 days according to the Healthcare Statistics 2026 report.\n🎯 Confidence: 93%\n\n📎 Sources: `doc_healthcare_stats`",
+      "conversation_summary": "The user asked two factual questions about healthcare statistics: the 30-day readmission rate (8.3%) and average hospital stay (4.2 days), both from doc_healthcare_stats."
+    }
+  ]
+}

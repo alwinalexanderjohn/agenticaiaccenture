@@ -1,0 +1,21 @@
+[2026-10-05 01:37:19]  Tool: document_reader  |  Status: EXACT_MATCH
+  Input:  doc_healthcare_stats
+  Output: [Document ID: doc_healthcare_stats]
+Title: Healthcare Statistics 2026
+
+Healthcare Statistics Report 2026
+Total Patients Treated: 12,450
+Average Length of Stay: 4.2 days
+Readmission Rate: 8.3%
+Patient Satisfaction Score: 87 out of 100
+Emergency Department Visits: 3,200
+Surgical Procedures Performed: 1,850
+Average Cost per Patient: $5,420
+Insurance Coverage Rate: 92%
+Staff-to-Patient Ratio: 1 to 4
+Annual Budget: $67,500,000
+Annual Operating Costs: $58,200,000
+Pharmacy Expenditure: $8,300,000
+Number of Beds: 450
+Bed Occupancy Rate: 78%
+
