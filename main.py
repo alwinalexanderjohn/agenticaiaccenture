@@ -140,21 +140,36 @@ def _summarize_flow(assistant: DocumentAssistant) -> None:
 
 
 def _calculator_flow(assistant: DocumentAssistant) -> None:
-    print(Y("\n  What would you like to calculate?"))
-    print("  Examples:  total revenue Q1 and Q2  |  average cost per patient  |  net profit margin")
-    try:
-        question = input("  🧮 ").strip()
-    except (EOFError, KeyboardInterrupt):
-        return
-    if not question:
-        print("  Cancelled.")
-        return
-    prompt = f"Calculate: {question}"
-    print(BD("\n  Assistant:"), flush=True)
-    try:
-        print(assistant.process_message(prompt))
-    except Exception as exc:
-        print(R(f"  [Error] {exc}"))
+    while True:
+        print(Y("\n  What would you like to calculate?"))
+        print("  Examples:  total revenue Q1 and Q2  |  average cost per patient  |  net profit margin")
+        print("  (Press Enter with no input to go back to the main menu.)")
+        try:
+            question = input("  🧮 ").strip()
+        except (EOFError, KeyboardInterrupt):
+            return
+        if not question:
+            print("  Returning to main menu.")
+            return
+
+        prompt = f"Calculate: {question}"
+        print(BD("\n  Assistant:"), flush=True)
+        try:
+            print(assistant.process_message(prompt))
+        except Exception as exc:
+            print(R(f"  [Error] {exc}"))
+
+        print()
+        print("  ┌──────────────────────────────────────┐")
+        print("  │  1  🧮  Ask another calculation       │")
+        print("  │  0  ↩   Back to main menu             │")
+        print("  └──────────────────────────────────────┘")
+        try:
+            sub = input("  Enter option (0 or 1): ").strip()
+        except (EOFError, KeyboardInterrupt):
+            return
+        if sub != "1":
+            return
 
 
 def _print_docs() -> None:
@@ -194,7 +209,8 @@ def main():
         elif choice == "3":
             _summarize_flow(assistant)
         elif choice == "4":
-            _calculator_flow(assistant)
+            _calculator_flow(assistant)  # has its own sub-menu loop
+            continue                      # skip the generic pause below
         elif choice == "5":
             _print_docs()
         elif choice == "6":
